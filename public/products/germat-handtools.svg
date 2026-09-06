@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <rect width="640" height="520" rx="8" fill="#EAF3FB"/>
+  <path d="M0 386h640v134H0z" fill="#DCE4ED"/>
+  <path d="m166 159 84 34-88 173-59-23z" fill="#2586D8"/>
+  <path d="m169 158 18-40 92 38-29 38z" fill="#12345A"/>
+  <path d="M380 137c30 0 55 25 55 55v48h-31v-48c0-13-11-24-24-24s-24 11-24 24v48h-31v-48c0-30 25-55 55-55z" fill="#1769AA"/>
+  <path d="M402 236h26l24 132h-77z" fill="#12345A"/>
+  <path d="M82 385h462" stroke="#B3C2D1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="241" cy="309" r="41" stroke="#12345A" stroke-width="12"/>
+  <circle cx="241" cy="309" r="12" fill="#2586D8"/>
+  <text x="86" y="91" fill="#12345A" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3">HANDGEREEDSCHAP</text>
+  <text x="86" y="122" fill="#627286" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">TECHNISCHE ILLUSTRATIE</text>
+</svg>

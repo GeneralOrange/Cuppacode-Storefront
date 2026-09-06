@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <rect width="640" height="520" rx="8" fill="#EAF3FB"/>
+  <path d="M0 382h640v138H0z" fill="#DCE4ED"/>
+  <path d="M173 163c51 22 88 71 112 147l-36 13c-28-67-58-97-101-114z" fill="#2586D8"/>
+  <path d="m171 160-39 38-31-17 37-43z" fill="#12345A"/>
+  <path d="m284 310 33 12-29 54-45-14z" fill="#12345A"/>
+  <path d="M379 164v165" stroke="#1769AA" stroke-width="24" stroke-linecap="round"/>
+  <path d="M379 204h98" stroke="#1769AA" stroke-width="24" stroke-linecap="round"/>
+  <path d="M482 203v-39" stroke="#12345A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M379 328h-37" stroke="#12345A" stroke-width="18" stroke-linecap="round"/>
+  <rect x="88" y="385" width="465" height="10" rx="5" fill="#B3C2D1"/>
+  <circle cx="466" cy="321" r="35" stroke="#2586D8" stroke-width="11"/>
+  <circle cx="466" cy="321" r="10" fill="#12345A"/>
+  <text x="88" y="91" fill="#12345A" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">INSTALLATIE</text>
+  <text x="88" y="122" fill="#627286" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">DETAIL · ILLUSTRATIE</text>
+</svg>

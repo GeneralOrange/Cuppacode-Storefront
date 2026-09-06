@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <rect width="640" height="520" rx="8" fill="#EAF3FB"/>
+  <path d="M0 389h640v131H0z" fill="#DCE4ED"/>
+  <path d="m87 172 214-54 57 208-214 55z" fill="#1769AA"/>
+  <path d="m123 184 160-40m-143 92 161-40m-144 91 161-41M171 151l57 208m15-219 57 207" stroke="#D8EAF9" stroke-width="5"/>
+  <path d="M411 200c-43 50-38 113 7 138 42 23 98 0 109-40 8-29-12-47-35-42-20 4-23 27-6 34" stroke="#12345A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M403 195h35v38h-35zM513 306h35v38h-35z" fill="#2586D8"/>
+  <rect x="372" y="155" width="49" height="34" rx="5" fill="#12345A"/>
+  <rect x="531" y="332" width="49" height="34" rx="5" fill="#12345A"/>
+  <text x="373" y="111" fill="#12345A" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">SOLAR</text>
+  <text x="373" y="137" fill="#627286" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">AANSLUITMATERIAAL</text>
+</svg>

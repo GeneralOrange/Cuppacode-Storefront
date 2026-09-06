@@ -1,0 +1,216 @@
+{
+  "settings": {
+    "storeName": "Germat demo",
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "locale": "nl-NL"
+  },
+  "categories": [
+    { "id": "g-cat-installatie", "name": "Installatiegereedschap", "slug": "installatiegereedschap", "description": "Gereedschap voor installatie, onderhoud en service." },
+    { "id": "g-cat-sets", "name": "Complete gereedschapsets", "slug": "gereedschapsets", "description": "Praktische sets voor leidingwerk en montage." },
+    { "id": "g-cat-pex", "name": "Waterleiding & PEX", "slug": "waterleiding-pex", "description": "Gereedschap voor PEX- en meerlagenbuis." },
+    { "id": "g-cat-solar", "name": "Zonnepanelen gereedschap", "slug": "zonnepanelen-gereedschap", "description": "Gereedschap en aansluitmateriaal voor solar-installaties." },
+    { "id": "g-cat-elektra", "name": "Elektra gereedschap", "slug": "elektra-gereedschap", "description": "Handgereedschap voor elektrotechnische montage." },
+    { "id": "g-cat-hand", "name": "Handgereedschap & accessoires", "slug": "handgereedschap", "description": "Handige tools voor dagelijks installatiewerk." },
+    { "id": "g-cat-rental", "name": "Gereedschap huren", "slug": "verhuur", "description": "Bekijk de verhuurdemonstratie en vraag beschikbaarheid aan." }
+  ],
+  "products": [
+    {
+      "id": "g-product-pex-complete-both",
+      "slug": "germat-complete-waterleiding-pex-gereedschapset-in-en-uitwendige-buigveren",
+      "name": "Germat Complete Waterleiding & PEX Gereedschapset met in- en uitwendige buigveren",
+      "description": "Een complete set voor montagewerk aan PEX/ALUPEX, koper en staal. De publiek zichtbare productinformatie noemt onder meer een buizensnijder, kniptang, kalibrators/ontbramers en beide typen buigveren. Kies het persprofiel en de bijbehorende maat. Controleer vóór gebruik altijd de compatibiliteit met het leidingsysteem.",
+      "shortDescription": "Complete set met inwendige én uitwendige buigveren.",
+      "productType": "variable",
+      "price": { "amount": 349, "currency": "EUR" },
+      "images": [{ "id": "g-image-pex-both", "url": "/products/germat-pex-set.svg", "alt": "Illustratieve vectorweergave van een gereedschapset voor PEX-installatie" }],
+      "categoryIds": ["g-cat-sets", "g-cat-pex", "g-cat-installatie"],
+      "inStock": true,
+      "attributes": [
+        { "id": "g-attr-profile", "name": "Persprofiel", "options": ["TH", "U", "V", "M", "UP", "R"] },
+        { "id": "g-attr-press-size", "name": "Persmaat", "options": ["12 mm", "15 mm", "16 mm", "18 mm", "20 mm", "22 mm", "25 mm", "26 mm", "28 mm", "32 mm", "Maat bevestigen"] }
+      ],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": [
+        { "id": "g-pex-both-th-16", "name": "TH / 16 mm", "price": { "amount": 369, "currency": "EUR" }, "attributes": { "Persprofiel": "TH", "Persmaat": "16 mm" }, "inStock": true, "image": { "id": "g-pex-both-th-16-image", "url": "/products/germat-pex-detail.svg", "alt": "Detailillustratie van een PEX-gereedschapset" } },
+        { "id": "g-pex-both-th-20", "name": "TH / 20 mm", "price": { "amount": 379, "currency": "EUR" }, "attributes": { "Persprofiel": "TH", "Persmaat": "20 mm" }, "inStock": false },
+        { "id": "g-pex-both-th-25", "name": "TH / 25 mm", "price": { "amount": 389, "currency": "EUR" }, "attributes": { "Persprofiel": "TH", "Persmaat": "25 mm" }, "inStock": true },
+        { "id": "g-pex-both-th-26", "name": "TH / 26 mm", "price": { "amount": 389, "currency": "EUR" }, "attributes": { "Persprofiel": "TH", "Persmaat": "26 mm" }, "inStock": true },
+        { "id": "g-pex-both-th-32", "name": "TH / 32 mm", "price": { "amount": 409, "currency": "EUR" }, "attributes": { "Persprofiel": "TH", "Persmaat": "32 mm" }, "inStock": true },
+        { "id": "g-pex-both-u-16", "name": "U / 16 mm", "price": { "amount": 369, "currency": "EUR" }, "attributes": { "Persprofiel": "U", "Persmaat": "16 mm" }, "inStock": true },
+        { "id": "g-pex-both-u-20", "name": "U / 20 mm", "price": { "amount": 379, "currency": "EUR" }, "attributes": { "Persprofiel": "U", "Persmaat": "20 mm" }, "inStock": true },
+        { "id": "g-pex-both-u-25", "name": "U / 25 mm", "price": { "amount": 389, "currency": "EUR" }, "attributes": { "Persprofiel": "U", "Persmaat": "25 mm" }, "inStock": true },
+        { "id": "g-pex-both-u-32", "name": "U / 32 mm", "price": { "amount": 409, "currency": "EUR" }, "attributes": { "Persprofiel": "U", "Persmaat": "32 mm" }, "inStock": true },
+        { "id": "g-pex-both-v-12", "name": "V / 12 mm", "price": { "amount": 359, "currency": "EUR" }, "attributes": { "Persprofiel": "V", "Persmaat": "12 mm" }, "inStock": true },
+        { "id": "g-pex-both-v-15", "name": "V / 15 mm", "price": { "amount": 359, "currency": "EUR" }, "attributes": { "Persprofiel": "V", "Persmaat": "15 mm" }, "inStock": true },
+        { "id": "g-pex-both-v-18", "name": "V / 18 mm", "price": { "amount": 369, "currency": "EUR" }, "attributes": { "Persprofiel": "V", "Persmaat": "18 mm" }, "inStock": true },
+        { "id": "g-pex-both-v-22", "name": "V / 22 mm", "price": { "amount": 379, "currency": "EUR" }, "attributes": { "Persprofiel": "V", "Persmaat": "22 mm" }, "inStock": true },
+        { "id": "g-pex-both-v-28", "name": "V / 28 mm", "price": { "amount": 399, "currency": "EUR" }, "attributes": { "Persprofiel": "V", "Persmaat": "28 mm" }, "inStock": true },
+        { "id": "g-pex-both-m-12", "name": "M / 12 mm", "price": { "amount": 359, "currency": "EUR" }, "attributes": { "Persprofiel": "M", "Persmaat": "12 mm" }, "inStock": true },
+        { "id": "g-pex-both-m-15", "name": "M / 15 mm", "price": { "amount": 359, "currency": "EUR" }, "attributes": { "Persprofiel": "M", "Persmaat": "15 mm" }, "inStock": true },
+        { "id": "g-pex-both-m-18", "name": "M / 18 mm", "price": { "amount": 369, "currency": "EUR" }, "attributes": { "Persprofiel": "M", "Persmaat": "18 mm" }, "inStock": true },
+        { "id": "g-pex-both-m-22", "name": "M / 22 mm", "price": { "amount": 379, "currency": "EUR" }, "attributes": { "Persprofiel": "M", "Persmaat": "22 mm" }, "inStock": true },
+        { "id": "g-pex-both-m-28", "name": "M / 28 mm", "price": { "amount": 399, "currency": "EUR" }, "attributes": { "Persprofiel": "M", "Persmaat": "28 mm" }, "inStock": true },
+        { "id": "g-pex-both-up-16", "name": "UP / 16 mm", "price": { "amount": 389, "currency": "EUR" }, "attributes": { "Persprofiel": "UP", "Persmaat": "16 mm" }, "inStock": true },
+        { "id": "g-pex-both-up-20", "name": "UP / 20 mm", "price": { "amount": 399, "currency": "EUR" }, "attributes": { "Persprofiel": "UP", "Persmaat": "20 mm" }, "inStock": true },
+        { "id": "g-pex-both-up-25", "name": "UP / 25 mm", "price": { "amount": 409, "currency": "EUR" }, "attributes": { "Persprofiel": "UP", "Persmaat": "25 mm" }, "inStock": true },
+        { "id": "g-pex-both-up-32", "name": "UP / 32 mm", "price": { "amount": 429, "currency": "EUR" }, "attributes": { "Persprofiel": "UP", "Persmaat": "32 mm" }, "inStock": true },
+        { "id": "g-pex-both-r-confirm", "name": "R / maat bevestigen", "price": { "amount": 399, "currency": "EUR" }, "attributes": { "Persprofiel": "R", "Persmaat": "Maat bevestigen" }, "inStock": true }
+      ]
+    },
+    {
+      "id": "g-product-pex-external",
+      "slug": "germat-complete-waterleiding-pex-gereedschapset-uitwendige-buigveren",
+      "name": "Germat Complete Waterleiding & PEX Gereedschapset met uitwendige buigveren",
+      "description": "Complete demonstratieset voor leidingwerk met uitwendige buigveren. De opties tonen persprofielen die op de openbare productinformatie staan; prijzen en beschikbaarheid zijn nadrukkelijk gesimuleerd.",
+      "shortDescription": "Complete gereedschapset met uitwendige buigveren.",
+      "productType": "variable",
+      "price": { "amount": 299, "currency": "EUR" },
+      "images": [{ "id": "g-image-pex-outside", "url": "/products/germat-pex-set.svg", "alt": "Illustratieve vectorweergave van een PEX-gereedschapset" }],
+      "categoryIds": ["g-cat-sets", "g-cat-pex", "g-cat-installatie"],
+      "inStock": true,
+      "attributes": [{ "id": "g-attr-profile-out", "name": "Persprofiel", "options": ["TH", "U", "V", "M", "UP", "R"] }],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": [
+        { "id": "g-pex-out-th", "name": "TH-profiel", "price": { "amount": 319, "currency": "EUR" }, "attributes": { "Persprofiel": "TH" }, "inStock": true },
+        { "id": "g-pex-out-u", "name": "U-profiel", "price": { "amount": 319, "currency": "EUR" }, "attributes": { "Persprofiel": "U" }, "inStock": true },
+        { "id": "g-pex-out-v", "name": "V-profiel", "price": { "amount": 309, "currency": "EUR" }, "attributes": { "Persprofiel": "V" }, "inStock": true },
+        { "id": "g-pex-out-m", "name": "M-profiel", "price": { "amount": 309, "currency": "EUR" }, "attributes": { "Persprofiel": "M" }, "inStock": true },
+        { "id": "g-pex-out-up", "name": "UP-profiel", "price": { "amount": 329, "currency": "EUR" }, "attributes": { "Persprofiel": "UP" }, "inStock": true },
+        { "id": "g-pex-out-r", "name": "R-profiel · maat controleren", "price": { "amount": 319, "currency": "EUR" }, "attributes": { "Persprofiel": "R" }, "inStock": false }
+      ]
+    },
+    {
+      "id": "g-product-pex-internal",
+      "slug": "germat-complete-waterleiding-pex-gereedschapset-inwendige-buigveren",
+      "name": "Germat Complete Waterleiding & PEX Gereedschapset met inwendige buigveren",
+      "description": "Demonstratie van de complete PEX-gereedschapset met inwendige buigveren. Controleer uitvoering en compatibiliteit met de fabrikant van de leiding en persfittingen.",
+      "shortDescription": "Complete gereedschapset met inwendige buigveren.",
+      "productType": "variable",
+      "price": { "amount": 279, "currency": "EUR" },
+      "images": [{ "id": "g-image-pex-inside", "url": "/products/germat-pex-set.svg", "alt": "Illustratieve vectorweergave van een PEX-gereedschapset" }],
+      "categoryIds": ["g-cat-sets", "g-cat-pex", "g-cat-installatie"],
+      "inStock": true,
+      "attributes": [{ "id": "g-attr-size-in", "name": "Buismaten", "options": ["16 mm", "20 mm", "25/26 mm", "32 mm"] }],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": [
+        { "id": "g-pex-in-16", "name": "16 mm", "price": { "amount": 279, "currency": "EUR" }, "attributes": { "Buismaten": "16 mm" }, "inStock": true },
+        { "id": "g-pex-in-20", "name": "20 mm", "price": { "amount": 289, "currency": "EUR" }, "attributes": { "Buismaten": "20 mm" }, "inStock": true },
+        { "id": "g-pex-in-25-26", "name": "25/26 mm", "price": { "amount": 299, "currency": "EUR" }, "attributes": { "Buismaten": "25/26 mm" }, "inStock": true },
+        { "id": "g-pex-in-32", "name": "32 mm", "price": { "amount": 309, "currency": "EUR" }, "attributes": { "Buismaten": "32 mm" }, "inStock": true }
+      ]
+    },
+    {
+      "id": "g-product-pex-basic",
+      "slug": "germat-complete-waterleiding-pex-gereedschapset",
+      "name": "Germat Complete Waterleiding & PEX Gereedschapset",
+      "description": "Een demo-opzet voor een complete basisset. De concrete inhoud en uitvoering moeten vóór een echte koppeling met Germat worden gecontroleerd.",
+      "shortDescription": "Een complete basis voor montage aan waterleiding en PEX.",
+      "price": { "amount": 249, "currency": "EUR" },
+      "images": [{ "id": "g-image-pex-basic", "url": "/products/germat-toolbox.svg", "alt": "Illustratieve vectorweergave van een gereedschapskoffer" }],
+      "categoryIds": ["g-cat-sets", "g-cat-pex", "g-cat-installatie"],
+      "inStock": true,
+      "attributes": [],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": []
+    },
+    {
+      "id": "g-product-pex-mount",
+      "slug": "pex-meerlagenbuis-montageset",
+      "name": "PEX / Meerlagenbuis montage set",
+      "description": "Montageset voor voorbereidende werkzaamheden aan meerlagenbuis. Deze demonstratie bevat varianten op buismaat; controleer de daadwerkelijke inhoud per uitvoering.",
+      "shortDescription": "Kies de buismaat voor de montage set.",
+      "productType": "variable",
+      "price": { "amount": 49, "currency": "EUR" },
+      "images": [{ "id": "g-image-pex-mount", "url": "/products/germat-pex-detail.svg", "alt": "Illustratieve vectorweergave van PEX-montagegereedschap" }],
+      "categoryIds": ["g-cat-pex", "g-cat-installatie", "g-cat-hand"],
+      "inStock": true,
+      "attributes": [{ "id": "g-attr-mount-size", "name": "Buismaat", "options": ["16 mm", "20 mm", "25 mm", "32 mm"] }],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": [
+        { "id": "g-mount-16", "name": "16 mm", "price": { "amount": 49, "currency": "EUR" }, "attributes": { "Buismaat": "16 mm" }, "inStock": true },
+        { "id": "g-mount-20", "name": "20 mm", "price": { "amount": 54, "currency": "EUR" }, "attributes": { "Buismaat": "20 mm" }, "inStock": true },
+        { "id": "g-mount-25", "name": "25 mm", "price": { "amount": 59, "currency": "EUR" }, "attributes": { "Buismaat": "25 mm" }, "inStock": false },
+        { "id": "g-mount-32", "name": "32 mm", "price": { "amount": 64, "currency": "EUR" }, "attributes": { "Buismaat": "32 mm" }, "inStock": true }
+      ]
+    },
+    {
+      "id": "g-product-mc4",
+      "slug": "mc4-connectoren",
+      "name": "MC4-connectoren voor zonnepanelen",
+      "description": "Demoproduct voor connectoren in een solar-installatie. De kleur- en verpakkingskeuzes zijn alleen voorbeelden om productvariaties te demonstreren en moeten met Germat worden gevalideerd.",
+      "shortDescription": "Solarconnectoren · kies uitvoering en verpakking.",
+      "productType": "variable",
+      "price": { "amount": 12, "currency": "EUR" },
+      "images": [{ "id": "g-image-mc4", "url": "/products/germat-solar.svg", "alt": "Illustratieve vectorweergave van solar-aansluitmateriaal" }],
+      "categoryIds": ["g-cat-solar", "g-cat-elektra"],
+      "inStock": true,
+      "attributes": [
+        { "id": "g-attr-mc4-type", "name": "Uitvoering", "options": ["Male + female", "Y-connector"] },
+        { "id": "g-attr-mc4-pack", "name": "Verpakking", "options": ["1 paar", "5 paar", "10 paar"] }
+      ],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": [
+        { "id": "g-mc4-pair", "name": "Male + female / 1 paar", "price": { "amount": 12, "currency": "EUR" }, "attributes": { "Uitvoering": "Male + female", "Verpakking": "1 paar" }, "inStock": true },
+        { "id": "g-mc4-5pair", "name": "Male + female / 5 paar", "price": { "amount": 49, "currency": "EUR" }, "attributes": { "Uitvoering": "Male + female", "Verpakking": "5 paar" }, "inStock": true },
+        { "id": "g-mc4-10pair", "name": "Male + female / 10 paar", "price": { "amount": 89, "currency": "EUR" }, "attributes": { "Uitvoering": "Male + female", "Verpakking": "10 paar" }, "inStock": true },
+        { "id": "g-mc4-y-5", "name": "Y-connector / 5 paar", "price": { "amount": 69, "currency": "EUR" }, "attributes": { "Uitvoering": "Y-connector", "Verpakking": "5 paar" }, "inStock": false }
+      ]
+    },
+    {
+      "id": "g-product-solar-cable",
+      "slug": "solar-kabel",
+      "name": "Solar kabel",
+      "description": "Een demonstratieproduct voor solar-kabel op lengte en doorsnede. De waarden en voorraad zijn fictieve testdata, geen actuele Germat-offerte.",
+      "shortDescription": "Stel een testcombinatie samen op doorsnede en lengte.",
+      "productType": "variable",
+      "price": { "amount": 19, "currency": "EUR" },
+      "images": [{ "id": "g-image-solar-cable", "url": "/products/germat-solar.svg", "alt": "Illustratieve vectorweergave van solar-kabel" }],
+      "categoryIds": ["g-cat-solar", "g-cat-elektra"],
+      "inStock": true,
+      "attributes": [
+        { "id": "g-attr-cable-section", "name": "Doorsnede", "options": ["4 mm²", "6 mm²"] },
+        { "id": "g-attr-cable-length", "name": "Lengte", "options": ["10 m", "25 m", "50 m"] }
+      ],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": [
+        { "id": "g-cable-4-10", "name": "4 mm² / 10 m", "price": { "amount": 19, "currency": "EUR" }, "attributes": { "Doorsnede": "4 mm²", "Lengte": "10 m" }, "inStock": true },
+        { "id": "g-cable-4-25", "name": "4 mm² / 25 m", "price": { "amount": 39, "currency": "EUR" }, "attributes": { "Doorsnede": "4 mm²", "Lengte": "25 m" }, "inStock": true },
+        { "id": "g-cable-4-50", "name": "4 mm² / 50 m", "price": { "amount": 74, "currency": "EUR" }, "attributes": { "Doorsnede": "4 mm²", "Lengte": "50 m" }, "inStock": true },
+        { "id": "g-cable-6-10", "name": "6 mm² / 10 m", "price": { "amount": 25, "currency": "EUR" }, "attributes": { "Doorsnede": "6 mm²", "Lengte": "10 m" }, "inStock": true },
+        { "id": "g-cable-6-25", "name": "6 mm² / 25 m", "price": { "amount": 54, "currency": "EUR" }, "attributes": { "Doorsnede": "6 mm²", "Lengte": "25 m" }, "inStock": false },
+        { "id": "g-cable-6-50", "name": "6 mm² / 50 m", "price": { "amount": 99, "currency": "EUR" }, "attributes": { "Doorsnede": "6 mm²", "Lengte": "50 m" }, "inStock": true }
+      ]
+    },
+    {
+      "id": "g-product-tool-accessory",
+      "slug": "pex-buis-kniptang",
+      "name": "PEX / ALUPEX buiskniptang",
+      "description": "Handgereedschap voor het knippen van kunststof- en meerlagenbuis. De productcapaciteit en prijs in deze demo moeten nog worden gecontroleerd.",
+      "shortDescription": "Praktisch handgereedschap voor meerlagenbuis.",
+      "price": { "amount": 34, "currency": "EUR" },
+      "images": [{ "id": "g-image-tool-accessory", "url": "/products/germat-handtools.svg", "alt": "Illustratieve vectorweergave van installatie-handgereedschap" }],
+      "categoryIds": ["g-cat-hand", "g-cat-pex", "g-cat-installatie"],
+      "inStock": true,
+      "attributes": [],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": []
+    },
+    {
+      "id": "g-product-solar-toolkit",
+      "slug": "zonnepanelen-gereedschapset",
+      "name": "Zonnepanelen gereedschapset",
+      "description": "Conceptproduct voor een solar-gereedschapset. De uiteindelijke samenstelling en beschikbaarheid zijn nog niet gecontroleerd.",
+      "shortDescription": "Gereedschap voor montagewerk aan zonnepanelen.",
+      "price": { "amount": 89, "currency": "EUR" },
+      "images": [{ "id": "g-image-solar-kit", "url": "/products/germat-solar.svg", "alt": "Illustratieve vectorweergave van solar-gereedschap" }],
+      "categoryIds": ["g-cat-solar", "g-cat-sets", "g-cat-elektra"],
+      "inStock": true,
+      "attributes": [],
+      "dataQuality": { "prices": "demo", "availability": "demo" },
+      "variants": []
+    }
+  ],
+  "customers": [],
+  "coupons": []
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <rect width="640" height="520" rx="8" fill="#EAF3FB"/>
+  <path d="M0 379h640v141H0z" fill="#DCE4ED"/>
+  <rect x="103" y="202" width="434" height="185" rx="18" fill="#12345A"/>
+  <rect x="128" y="226" width="384" height="133" rx="10" fill="#172B40" stroke="#627286" stroke-width="4"/>
+  <path d="M229 203v-29c0-18 15-33 33-33h116c18 0 33 15 33 33v29" stroke="#12345A" stroke-width="18"/>
+  <path d="M103 277h434" stroke="#2586D8" stroke-width="11"/>
+  <rect x="157" y="301" width="62" height="31" rx="5" fill="#DCE4ED"/>
+  <rect x="232" y="301" width="62" height="31" rx="5" fill="#DCE4ED"/>
+  <rect x="307" y="301" width="62" height="31" rx="5" fill="#DCE4ED"/>
+  <rect x="382" y="301" width="96" height="31" rx="5" fill="#DCE4ED"/>
+  <circle cx="148" cy="390" r="14" fill="#12345A"/>
+  <circle cx="491" cy="390" r="14" fill="#12345A"/>
+  <text x="118" y="94" fill="#12345A" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3">GEREEDSCHAPSET</text>
+  <text x="118" y="126" fill="#627286" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SAMENSTELLING CONTROLEREN</text>
+</svg>

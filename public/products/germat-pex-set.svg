@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <rect width="640" height="520" rx="8" fill="#EAF3FB"/>
+  <path d="M0 364h640v156H0z" fill="#DCE4ED"/>
+  <rect x="76" y="214" width="246" height="177" rx="14" fill="#12345A"/>
+  <rect x="94" y="232" width="210" height="128" rx="8" fill="#172B40" stroke="#627286" stroke-width="3"/>
+  <path d="M141 214v-18c0-17 14-31 31-31h54c17 0 31 14 31 31v18" stroke="#12345A" stroke-width="14"/>
+  <path d="M120 262h158M120 278h158" stroke="#2586D8" stroke-width="7"/>
+  <rect x="122" y="300" width="65" height="43" rx="5" fill="#DCE4ED"/>
+  <rect x="197" y="300" width="81" height="43" rx="5" fill="#DCE4ED"/>
+  <path d="M392 347c-15-52 8-97 42-103 29-5 47 20 41 48-5 25-32 44-26 77" stroke="#1769AA" stroke-width="17" stroke-linecap="round"/>
+  <path d="M466 349c-14-49 10-86 38-89 27-3 39 22 32 45-6 21-27 37-21 64" stroke="#2586D8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M378 355h180" stroke="#627286" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="128" cy="392" r="13" fill="#12345A"/>
+  <circle cx="270" cy="392" r="13" fill="#12345A"/>
+  <path d="M370 390h194" stroke="#C4CFDA" stroke-width="3"/>
+  <path d="M372 416h126" stroke="#C4CFDA" stroke-width="3"/>
+  <text x="370" y="118" fill="#12345A" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">PEX / ALUPEX</text>
+  <text x="370" y="146" fill="#627286" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">GEREEDSCHAPSET</text>
+</svg>
