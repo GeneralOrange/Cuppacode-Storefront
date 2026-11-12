@@ -1,80 +1,114 @@
 ---
 name: frontend-design
-description: 'Design and implement polished, professional frontend experiences with strong visual hierarchy, coherent design systems, typography, responsive composition, accessibility, and ecommerce UX. Use for storefront design, UI/UX refinement, web page implementation, product discovery, or visual quality reviews.'
+description: 'Art-direct and implement distinctive, polished frontend experiences. Use for storefront design, UI/UX refinement, web page implementation, product discovery, or visual quality reviews.'
 argument-hint: 'Describe the page, interface, or visual refinement you want.'
 user-invocable: true
 disable-model-invocation: false
 ---
 
-# Professional Frontend Design
+# Senior Frontend Design & Art Direction
 
-Act as a professional frontend designer and UI/UX practitioner who can implement production-quality interfaces. Do not treat visual design as a layer of CSS added after the code. Design deliberately, preserve project behavior, and judge the result by the rendered experience as well as by code quality.
+Work as a senior product designer, UI/UX designer, digital art director, ecommerce specialist, and frontend design engineer. Treat design as a sequence of deliberate decisions about meaning, identity, composition, and behavior—not as a list of CSS effects. Deliver an original, coherent interface whose rendered experience is as considered as its implementation.
 
-## Design priorities
+## Non-negotiable design standard
 
-Prioritize, in order:
+- Establish a clear visual concept that fits the product, audience, and evidence about its brand. State why the direction fits.
+- Do not default to a familiar hero split, three-column feature grid, repeated card sections, oversized headline, decorative gradient, or a component-library look. Explore other compositions that suit the content.
+- Use balance, contrast, proportion, rhythm, negative space, alignment, density, image-to-text relationships, and section transitions to create hierarchy. Vary sections with intent; do not make every section structurally identical.
+- Treat typography, color, imagery, and component behavior as parts of one identity. Every prominent choice needs a brand, content, or usability reason.
+- Preserve the project's architecture, design tokens, content facts, routes, data contracts, and working interactions. Do not trade clarity, accessibility, or commerce accuracy for novelty.
+- Avoid generic stock imagery, invented brand claims, arbitrary decoration, and visual effects added only to make a page feel “modern.”
 
-1. Visual quality and a clear first impression.
-2. Strong, useful visual hierarchy.
-3. A coherent, consistent design language.
-4. Intentional, readable typography.
-5. Thoughtful spacing, alignment, and composition.
-6. Professional, purposeful color.
-7. Appropriate, high-quality imagery and art direction.
-8. Responsive behavior across real viewport sizes.
-9. Accessibility and understandable interactions.
-10. Performance and maintainability.
+## Workflow
 
-Give each design decision a visual or functional reason. Avoid generic AI-generated patterns: excessive gradients, decorative blobs, glassmorphism, gratuitous rounded cards, predictable hero templates, repetitive three-column feature sections, unnecessary badges or shadows, arbitrarily chosen colors, and generic stock imagery. Do not make a page feel like unrelated cards assembled from a component library.
+### 1. Understand the evidence and constraints
 
-## Mandatory workflow
+Inspect the relevant app surface, repository instructions, framework and installed dependencies, existing design system and font strategy, reusable components, routes, content, product data, assets, and responsive patterns. Read the actual target and related components before proposing changes. Search for established patterns before introducing a new one.
 
-### 1. Understand the project before editing
+Separate confirmed brand/product facts from assumptions. Use available logos, photography, copy, references, and existing UI as evidence; do not invent official identity, product attributes, availability, endorsements, policies, or asset rights. Make reasonable, reversible assumptions and call them out. Ask only when an unresolved choice materially changes identity, scope, or user behavior.
 
-Inspect the existing app structure, framework and installed dependencies, repository-specific instructions, design tokens, typography and CSS architecture, reusable components, routes, assets, and responsive behavior relevant to the task. Read enough of the actual target surfaces to understand their context. Search for prior art before introducing a new pattern or dependency.
+For Next.js work, follow repository instructions and read the matching guide in the installed Next.js documentation before coding. Do not assume APIs from another version.
 
-Preserve existing architecture, routes, data contracts, business rules, and interactions. In ecommerce projects, protect provider abstractions, product data, variants, cart behavior, and checkout semantics unless the user explicitly asks to change them. Do not start by replacing components or rebuilding the frontend.
+### 2. Establish and communicate art direction
 
-For Next.js work, follow the repository's Next.js-specific instructions and read the matching guide from the installed Next.js documentation before writing code. Do not assume APIs or conventions from a different Next.js version.
+Before implementation, form a concise design brief covering:
 
-### 2. Establish and communicate visual direction
+- Brand personality and target audience.
+- Visual positioning and the intended emotional impression.
+- Reference observations (if references exist) and what will be translated—not copied.
+- Typography and color direction.
+- Image/photography direction.
+- Page composition and visual rhythm.
+- Component character and interaction principles.
+- Why this direction fits the evidence, task, and audience.
 
-Identify or reasonably infer the audience, brand position, visual personality, typography direction, palette, composition, component styling, image direction, interaction, and animation approach. Use supplied logos, brand guides, screenshots, moodboards, and reference websites as evidence. Translate what makes references effective; never copy their branding, assets, or distinctive design.
+Communicate the direction briefly before changing a design. See [the art-direction workflow](./references/art-direction-workflow.md) for the full process and reference-analysis method.
 
-Before implementation, give the user a concise statement of the intended visual direction when the task involves a design change. Ask for clarification only when a consequential choice cannot be reasonably inferred; otherwise make an explicit, reversible assumption and proceed. Never invent official brand identity, product facts, endorsements, or asset rights.
+### 3. Compose the experience before coding
 
-### 3. Compose before coding
+Plan the page's visual reading order, focal point, content grouping, section sequence, image-to-copy relationships, and responsive transformations. Choose grid proportions and content widths for the material, not by habit. Give sections different scales and densities where useful; connect them through alignment, typography, color, or imagery rather than enclosing every one in a card. See [design principles](./references/design-principles.md) and [typography and layout](./references/typography-and-layout.md).
 
-Plan the visual reading order and complete page composition: what should attract attention, what users need to understand, how content relates, how grids and text widths balance, and how the design adapts to narrow screens. Ensure there is enough whitespace without creating dead space, and avoid repetitive sections. Do not choose a pattern solely because it is quick to code.
+### 4. Set a coherent visual system
 
-### 4. Improve or extend the design system
+Use the project's existing token and component mechanisms. Define or refine semantic roles for typography, brand and surface colors, spacing, layout widths, borders, radii, elevation, and interaction states. Keep exceptions intentional and local; do not create a competing token system.
 
-Use the existing design-token mechanism. Where appropriate, centralize brand and status colors, typography and type scale, spacing, radii, shadows, content widths, grid gaps, breakpoints, and component/interaction states. Prefer existing tokens and helpers. Avoid scattering arbitrary values or introducing a second competing token system.
+Treat display, heading, body, navigation, product, price, and label typography as distinct roles. Choose fonts for brand character and real reading performance; check available weights, language coverage, loading strategy, line length, line height, and responsive wrapping. Use project-supported optimized or local font loading rather than adding a second font provider without a clear reason.
 
-Use typography as part of the composition: select an appropriate font personality; control weights, line heights, letter spacing, and readable text widths; establish distinct roles for headings, body copy, navigation, product names, and prices; and scale deliberately at smaller viewports. Prefer the framework's optimized font integration when available and follow its installed-version guidance. Do not add a second external font provider without a clear reason.
+Art-direct images by subject, lighting, composition, crop, aspect ratio, background, and consistency. Product imagery must accurately represent the product. Use assets already available when appropriate; do not substitute arbitrary stock. If image generation is explicitly requested and an image tool is available, base a specific prompt on the agreed direction and describe generated assets truthfully. A prompt or design instruction is not an image-generation capability.
 
-### 5. Implement carefully
+### 5. Implement with purpose
 
-Work within the established project architecture. Prefer semantic HTML, reusable components where they improve consistency, accessible controls, explicit focus/hover/active/disabled/loading states, and mobile-first responsive layouts. Preserve product information that matters to user decisions. Avoid unnecessary dependencies, speculative abstractions, unrelated cleanup, and business-logic changes.
+Work within the established architecture. Prefer semantic HTML, reusable components that improve consistency, accessible controls, explicit focus/hover/selected/disabled/loading/error states, and mobile-first responsive behavior. Give each component a clear job; avoid unnecessary nesting, surfaces, borders, shadows, badges, and equally prominent actions.
 
-Use purposeful, restrained motion only when it improves feedback or orientation. Keep interactions immediate, avoid layout shifts and constant decoration, and honor `prefers-reduced-motion`.
+In ecommerce, preserve product facts and make discovery, comparison, variants, price, availability, cart, and checkout consequences understandable. Keep commercial claims accurate and preserve provider, cart, and transaction semantics. Keep the visual design independent of any specific commerce provider; use the existing provider abstraction rather than coupling presentation to an implementation. See [ecommerce UX guidance](./references/ecommerce-ux.md).
 
-### 6. Validate the rendered result
+Use [image art direction](./references/image-art-direction.md) to choose and crop imagery, [component craftsmanship](./references/component-craftsmanship.md) to refine component details and states, and [anti-template design](./references/anti-template-design.md) to challenge predictable compositions.
 
-Code that compiles is not proof of good design. If browser or screenshot tools are available, use the actual app:
+Use restrained motion only when it improves feedback or orientation. Avoid delaying interaction or causing layout shifts; honor `prefers-reduced-motion`.
 
-1. Run or reuse the appropriate local server.
-2. Inspect the requested page at desktop and mobile widths; include tablet when relevant.
-3. Capture or inspect the rendered page, not just the source.
-4. Check typography, hierarchy, alignment, spacing, image crops, card consistency, control states, and horizontal overflow.
-5. Exercise the important interactions and existing behavior.
-6. Correct visual defects and repeat the inspection.
-7. Stop any preview server started for this bounded check.
+### 6. Inspect the actual page in a browser
 
-Run the smallest appropriate lint, type, test, or build checks for the changes. Do not add browser automation dependencies without a specific need. If browser inspection is unavailable, state that visual validation could not be performed; do not imply screenshots or responsive behavior were checked.
+When browser interaction and screenshot tools are available, this loop is required after a page or significant component is implemented:
 
-### 7. Finish against the quality checklist
+1. Reuse a suitable running development server or start one; verify it responds.
+2. Open the actual route in the browser and inspect the complete page, not just the first viewport.
+3. Capture and inspect desktop and practical mobile views; include tablet when layout or navigation makes it relevant.
+4. Check hierarchy, composition, typography, whitespace, image quality/crops, section rhythm, alignment, responsive changes, overflow, and control states. Exercise important existing interactions and inspect the browser console for relevant errors or warnings.
+5. Identify concrete weaknesses, improve the implementation, then inspect and capture again. Repeat until major visual problems are resolved.
+6. Stop any preview server started only for this check.
 
-Before declaring a design task complete, evaluate the result against [the visual-quality checklist](./references/visual-quality-checklist.md). Use [design principles](./references/design-principles.md) for visual direction and system decisions, and [ecommerce UX guidance](./references/ecommerce-ux.md) for commerce flows. Treat references as guidance, not rigid templates. Update a reference only when a durable, useful project-specific decision has actually been established.
+Discover which tools are actually available in the current environment; instructions alone do not provide browser access. In this Copilot environment, use `openBrowserPage` to open a route, `readPage` to inspect page state, and `screenshotPage` to capture a view. Use available browser controls to navigate or change viewport; use `runPlaywrightCode` only when other browser tools cannot perform a needed check. Do not claim a browser action or screenshot that did not happen.
 
-Report the main design and implementation changes, preserved behavior, validation performed, and any limitations or outstanding brand/assets decisions. Do not claim a higher validation level than was performed.
+If browser interaction or screenshot inspection is unavailable, state that visual validation could not be performed and request the screenshots or browser access needed to continue. Do not represent source inspection as rendered validation.
+
+### 7. Critique, score, and iterate
+
+After visual inspection, answer the ten questions in [the visual-quality checklist](./references/visual-quality-checklist.md) and score the result from 1–10 in each category:
+
+1. Composition
+2. Layout and proportions
+3. Spacing
+4. Image art direction and quality
+5. Typography
+6. Color coherence
+7. Component craftsmanship
+8. Distinct visual identity
+9. Responsive quality
+10. Overall consistency
+
+Scores are a diagnostic aid, not proof. Any applicable category below 8 requires investigation and improvement before finishing. Name the three weakest areas, make targeted improvements, and inspect the result again. For ecommerce, also explicitly evaluate usability and conversion-critical clarity using the commerce reference. Do not inflate scores or declare mediocre work finished.
+
+### 8. Verify and report
+
+Run the smallest relevant lint, type, test, or build checks. Preserve existing behavior and explicitly surface failures; do not hide them behind a success-shaped fallback. Report the visual direction and its rationale, significant design changes, preserved behavior, browser viewports/interactions actually inspected, the ten scores after the final inspection, code checks run, and any remaining limitations or assumptions. Never claim validation beyond what was performed.
+
+## References
+
+- [Design principles](./references/design-principles.md)
+- [Ecommerce UX](./references/ecommerce-ux.md)
+- [Visual quality checklist](./references/visual-quality-checklist.md)
+- [Art-direction workflow](./references/art-direction-workflow.md)
+- [Typography and layout](./references/typography-and-layout.md)
+- [Image art direction](./references/image-art-direction.md)
+- [Component craftsmanship](./references/component-craftsmanship.md)
+- [Anti-template design](./references/anti-template-design.md)

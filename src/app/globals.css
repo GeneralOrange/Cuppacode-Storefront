@@ -188,6 +188,69 @@ html[data-storefront="germat"] .germat-product-title {
   list-style: decimal;
 }
 
+.prose-germat h2,
+.prose-germat h3,
+.prose-germat h4 {
+  margin-top: 2rem;
+  line-height: 1.3;
+}
+
+.prose-germat h2 {
+  font-size: 1.5rem;
+}
+
+.prose-germat h3 {
+  font-size: 1.25rem;
+}
+
+.prose-germat blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.prose-germat figure,
+.prose-germat img {
+  max-width: 100%;
+}
+
+.prose-germat img {
+  height: auto;
+}
+
+.prose-germat figcaption,
+.prose-germat caption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.prose-germat table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.prose-germat th,
+.prose-germat td {
+  border: 1px solid var(--line);
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+}
+
+.prose-germat th {
+  background: var(--surface-muted);
+  font-weight: 700;
+}
+
+.prose-germat hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
 .prose-germat a {
   color: var(--accent);
   text-decoration: underline;

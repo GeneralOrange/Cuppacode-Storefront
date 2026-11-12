@@ -42,7 +42,9 @@ export function ProductCard({ product }: { product: Product }) {
           <p className="break-words text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">
             {product.categories[0]?.name ?? "Gereedschap"}
           </p>
-          <h2 className="line-clamp-3 min-h-[3.6rem] break-words text-base font-bold leading-snug sm:text-lg">
+          <h2
+            className={`${isGermat ? "break-words" : "line-clamp-3 min-h-[3.6rem]"} text-base font-bold leading-snug sm:text-lg`}
+          >
             {product.name}
           </h2>
           <p className="line-clamp-2 min-h-10 text-sm leading-5 text-[var(--muted)]">

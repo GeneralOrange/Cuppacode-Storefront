@@ -1,56 +1,56 @@
 # Ecommerce UX Guidance
 
-Design ecommerce interfaces to help shoppers understand the assortment, evaluate products, choose the correct configuration, and complete an appropriate purchase flow. Visual simplicity must not obscure product facts or purchase consequences.
+Design commerce experiences to help people discover an assortment, understand product differences, choose a suitable configuration, and complete the intended transaction with confidence. Visual polish must not conceal product facts or purchase consequences.
 
 ## Discovery and navigation
 
-- Make the site's specialist category structure understandable and easy to browse.
-- Keep primary navigation compact; use grouped dropdowns or mobile navigation when they genuinely improve access to a large assortment.
-- Make search easy to find, labeled, keyboard accessible, and connected to the expected results experience.
-- Preserve category context and useful search terms as shoppers move between listing and detail pages.
-- Make service, advice, delivery, returns, rental, and other commercial information visible when it affects the purchase decision. Never invent policy claims.
+- Make category structure, search, and the next step understandable. Keep primary navigation compact; add grouped navigation only when the assortment warrants it.
+- Make search visible, labeled, keyboard accessible, and connected to the expected results experience.
+- Preserve useful category context and search terms as shoppers move between listing and detail pages.
+- Surface advice, delivery, returns, rental, compatibility, and other commercial information when it affects a decision. State only verified policies and services.
+- Keep navigation and filters usable with touch, keyboard, and assistive technology; do not rely on hover-only access.
 
-## Product listing and cards
+## Product listing and product cards
 
-- Give products consistent image frames, names, concise descriptions, category context, and readable price placement.
-- Maintain card alignment and stable information areas so prices and actions do not jump unpredictably between cards.
-- Use a useful, consistent product image treatment. Product fidelity and imagery often matter more than decorative backgrounds.
-- Make variable products recognizable and set an accurate expectation, such as a minimum “from” price and a clear “view options” action.
-- Distinguish actual availability from demo or unknown availability. Use textual status alongside semantic color; never imply live inventory from sample data.
-- Ensure add-to-cart and view-options controls are distinct, appropriately sized, and keyboard operable.
-- Keep product facts, compatibility notes, and units legible; do not hide them to make a card appear more minimal.
+- Present product identity, useful product imagery, name, key distinction, and price in a stable, scannable hierarchy.
+- Use consistent image frames and stable information/action areas so prices and controls do not jump unpredictably.
+- Product imagery should accurately represent the item. Use consistent treatment across a range without cropping away relevant details.
+- Distinguish simple products from configurable products; show an accurate “from” price when appropriate and a clear “view options” action.
+- Make add-to-cart and view-options actions distinct, appropriately sized, keyboard operable, and accurate about what happens next.
+- State actual availability separately from demo or unknown data. Never imply live inventory from sample data.
+- Keep factual product details, units, compatibility, and meaningful differentiators legible.
 
 ## Product detail and variants
 
-- Establish a clear product title, product-specific imagery, price, key description, and purchase controls near the top of the detail view.
-- Present variant attributes with explicit labels, selected values, and visible unavailable/impossible choices. Do not make users infer which option is active.
-- Preserve selected options when the shopper makes compatible subsequent choices. Disable impossible combinations only when the product data supports that conclusion.
-- Update the displayed variant price, image, stock message, and add-to-cart identity consistently when a valid variant changes.
-- Keep sold-out or unavailable choices understandable and non-purchasable. Do not suggest an item is available when it is not.
-- Communicate the consequences of selecting an option before adding it. Provide useful inline guidance when required choices are missing.
-- Keep product-specific specifications and compatibility context available, especially for technical or specialist goods.
+- Place title, product-specific imagery, price, key description, and purchase controls in a coherent first-view hierarchy.
+- Label every variant attribute, show selected values clearly, and make unavailable or impossible choices understandable.
+- Preserve compatible selections when another option changes. Disable impossible combinations only when product data supports the decision.
+- Keep variant identity, image, price, stock message, and add-to-cart payload in sync when a valid selection changes.
+- Explain required selections and purchase consequences before add-to-cart. Never suggest an unavailable item is purchasable.
+- Keep specifications, care, compatibility, and other decision-critical details accessible without making the purchase area hard to understand.
 
 ## Search, filters, and sorting
 
-- Use plain-language labels and useful defaults. Keep the active filters and result count apparent.
-- Provide a clear reset action that preserves intentional route context where applicable.
-- Avoid offering filters that do not match available product data.
-- On mobile, make filter controls easy to open, operate, apply, and dismiss. Support Escape and accessible dialog semantics for modal drawers.
-- Ensure sorting behavior matches the visible label and displayed price semantics (including variant price ranges).
-- Preserve filter behavior and results while improving styling.
+- Use plain-language labels and useful defaults. Make the active filters, result count, and reset action apparent.
+- Offer only filters supported by available product data. Preserve route context where applicable when filters reset.
+- Ensure the visible sort label matches actual behavior, including the treatment of variant price ranges.
+- On mobile, make filter controls easy to open, operate, apply, and dismiss. Modal drawers should have accessible dialog semantics and support Escape.
+- Preserve filtering, sorting, and result behavior while improving presentation.
 
 ## Cart and checkout
 
-- Show product identity, selected variant, quantity, unit/subtotal price, and a clear way to update or remove items.
-- Distinguish cart-level totals and disclose what is excluded, such as taxes or shipping, when applicable.
-- Provide responsive cart and checkout layouts without hiding key choices or totals.
-- Use clear loading, success, and error states. Avoid silent failures or ambiguous button labels.
-- Keep the boundary between preview and real transaction unmistakable. Never imply an order, payment, reservation, availability check, or customer data submission occurred unless that behavior actually exists.
-- Preserve provider, cart identity, and order semantics. Visual refinement must not change commerce business logic.
+- Show product identity, selected variant, quantity, unit/subtotal price, and clear update/remove controls.
+- Distinguish item subtotals from order totals. Disclose what is excluded, such as shipping or taxes, when applicable and known.
+- Keep key choices, validation messages, and totals visible in responsive cart and checkout layouts.
+- Provide honest loading, success, and error states. Use specific action labels and explicitly surface failures.
+- Keep preview/demo behavior unmistakable. Never imply an order, payment, reservation, availability check, or customer data submission occurred unless it actually did.
+- Preserve commerce provider, cart identity, product and order semantics. A visual change must not alter business logic.
+- Keep presentation independent of the commerce provider. Work through the repository's existing interfaces and provider abstractions; do not encode provider-specific assumptions in shared visual components.
 
-## Service, trust, and content
+## Trust and conversion
 
-- Surface only verified service claims, ratings, certifications, stock, delivery times, guarantees, and payment assurances.
-- Explain demo values, placeholder imagery, or unconfirmed product details where needed to prevent misrepresentation.
-- Do not add urgency, scarcity, discounts, or social proof unless supported by real data and authorized content.
-- Keep calls to action specific and consistent with the actual next step.
+- Improve confidence by making the right information findable, not by manufacturing urgency or reassurance.
+- Surface only supported service claims, ratings, certifications, stock, delivery times, guarantees, and payment assurances.
+- Do not add scarcity, discounts, social proof, or checkout promises unless supported by real, authorized content.
+- Keep calls to action specific to the actual next step. Do not make every action equally prominent.
+- Evaluate conversion alongside usability: product comprehension, discoverability, selection confidence, accessibility, and transaction clarity are all part of a successful design.

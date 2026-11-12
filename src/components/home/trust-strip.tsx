@@ -3,9 +3,9 @@ import { themeConfig } from "@/config/theme";
 export function TrustStrip() {
   const items = themeConfig.key === "germat"
     ? [
-        ["01", "Verzending binnen 24 uur", "Actuele voorwaarden op germat.nl"],
-        ["02", "Persoonlijke service", "Vakkundig advies voor je klus"],
-        ["03", "Beoordeeld met 4,9 / 5", "Zoals vermeld op de Germat-homepage"],
+        ["01", "Demo-producten", "Illustraties tonen geen exacte productuitvoering"],
+        ["02", "Prijs & voorraad", "Indicatieve gegevens, geen actuele offerte"],
+        ["03", "Geen echte bestelling", "Winkelwagen en checkout zijn simulaties"],
       ]
     : [
         ["01", "Small-batch goods", "Chosen for daily use"],
@@ -15,7 +15,7 @@ export function TrustStrip() {
 
   return (
     <section
-      aria-label="Service en voordelen"
+      aria-label={themeConfig.key === "germat" ? "Over deze demo" : "Service en voordelen"}
       className="border-y border-[var(--line)] bg-white"
     >
       <div className="mx-auto grid max-w-7xl md:grid-cols-3">

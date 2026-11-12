@@ -7,7 +7,7 @@ const storefronts = {
     brand: {
       name: "GERMAT",
       tagline: "Professioneel gereedschap. Direct aan de slag.",
-      announcement: "Demo-omgeving · prijzen en voorraad zijn indicatief",
+      announcement: "Demo-omgeving · beelden, prijzen en voorraad zijn indicatief",
     },
     navigation: [
       { label: "Installatie", href: "/category/installatiegereedschap" },
@@ -17,6 +17,14 @@ const storefronts = {
       { label: "Handgereedschap", href: "/category/handgereedschap" },
       { label: "Elektra gereedschap", href: "/category/elektra-gereedschap" },
       { label: "Verhuur", href: "/verhuur" },
+    ],
+    cmsNavigation: [
+      { label: "Over ons", href: "/over-ons" },
+      { label: "Contact", href: "/contact" },
+      { label: "Verzending", href: "/verzending" },
+      { label: "Garantie", href: "/garantie" },
+      { label: "Verhuur", href: "/verhuur" },
+      { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" },
     ],
   },
   nova: {
@@ -33,6 +41,7 @@ const storefronts = {
       { label: "Objects", href: "/category/brewing-equipment" },
       { label: "Tea", href: "/category/tea" },
     ],
+    cmsNavigation: [],
   },
 } as const;
 

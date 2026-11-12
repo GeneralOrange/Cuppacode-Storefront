@@ -44,18 +44,17 @@ export function SiteFooter() {
           </p>
           <p className="mt-4 text-sm leading-6 text-white/75">
             {isGermat
-              ? "Vragen over een uitvoering? Bekijk de officiële productinformatie of neem contact op met Germat."
+              ? "Praktische informatie en contact met Germat."
               : "Thoughtfully selected goods, clear design, and a slower approach to daily essentials."}
           </p>
-          {isGermat ? (
-            <a
-              href="https://germat.nl/contact/"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.1em] underline underline-offset-4"
-            >
-              Contact Germat ↗
-            </a>
+          {themeConfig.cmsNavigation.length ? (
+            <nav aria-label="Informatie" className="mt-4 grid gap-3 text-sm text-white/80">
+              {themeConfig.cmsNavigation.map((item) => (
+                <Link key={item.href} href={item.href} className="hover:text-white">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           ) : null}
         </div>
       </div>

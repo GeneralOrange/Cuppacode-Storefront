@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Category } from "@/commerce/core/types";
 
-const categoryVisuals: Record<string, { image: string; tone: string }> = {
+const categoryVisuals: Record<string, { image?: string; tone: string }> = {
   installatiegereedschap: {
-    image: "/products/germat-toolbox.svg",
+    image: "/products/germat-pex-detail.svg",
     tone: "bg-[var(--accent-soft)]",
   },
   gereedschapsets: {
-    image: "/products/germat-pex-set.svg",
+    image: "/products/germat-toolbox.svg",
     tone: "bg-[var(--accent-soft)]",
   },
   "zonnepanelen-gereedschap": {
@@ -16,7 +16,7 @@ const categoryVisuals: Record<string, { image: string; tone: string }> = {
     tone: "bg-[var(--accent-soft)]",
   },
   "waterleiding-pex": {
-    image: "/products/germat-pex-detail.svg",
+    image: "/products/germat-pex-set.svg",
     tone: "bg-[var(--accent-soft)]",
   },
   handgereedschap: {
@@ -24,7 +24,6 @@ const categoryVisuals: Record<string, { image: string; tone: string }> = {
     tone: "bg-[var(--accent-soft)]",
   },
   "elektra-gereedschap": {
-    image: "/products/germat-solar.svg",
     tone: "bg-[var(--accent-soft)]",
   },
   coffee: { image: "/products/Photo_3.jpg", tone: "bg-[#c9ad8c]" },
@@ -54,7 +53,13 @@ export function CategoryShowcase({ categories }: { categories: Category[] }) {
           Bekijk assortiment
         </Link>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className={`grid gap-4 ${
+          isGermat
+            ? "grid-cols-1 sm:grid-cols-2 lg:auto-rows-[240px] lg:grid-cols-12"
+            : "sm:grid-cols-2 lg:grid-cols-3"
+        }`}
+      >
         {visible.map((category, index) => {
           const visual = categoryVisuals[category.slug];
           return (
@@ -62,16 +67,36 @@ export function CategoryShowcase({ categories }: { categories: Category[] }) {
               key={category.id}
               href={`/category/${category.slug}`}
               className={`group relative min-h-64 overflow-hidden border border-[var(--line)] ${visual.tone} ${
-                index === 0 ? "sm:row-span-2 sm:min-h-[528px]" : ""
+                isGermat && index === 0
+                  ? "lg:col-span-8 lg:row-span-2 lg:min-h-0"
+                  : isGermat
+                    ? "lg:col-span-4 lg:min-h-0"
+                    : ""
               }`}
             >
-              <Image
-                src={visual.image}
-                alt=""
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-              />
+              {visual.image ? (
+                <Image
+                  src={visual.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 66vw"
+                  className={`transition-transform duration-500 group-hover:scale-[1.015] ${
+                    isGermat ? "object-contain" : "object-cover"
+                  }`}
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 grid place-items-center text-[var(--accent)]"
+                >
+                  <svg viewBox="0 0 64 88" className="h-24 w-auto sm:h-28" fill="none">
+                    <path
+                      d="M37 4 8 47h20l-3 37 31-49H36l1-31Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              )}
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-5 pt-20 text-white">
                 <div className="min-w-0 flex-1">
                   <h3 className="break-words text-2xl font-semibold">{category.name}</h3>

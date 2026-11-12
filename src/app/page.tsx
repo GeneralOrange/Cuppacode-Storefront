@@ -31,61 +31,87 @@ export default async function Home() {
 
   return (
     <SiteShell>
-      <section className="relative px-4 py-4 text-white sm:px-5 lg:px-8">
-        <div className="mx-auto grid min-h-0 max-w-[var(--content-width)] items-center gap-4 overflow-hidden rounded-[var(--radius-hero)] bg-[var(--hero)] px-4 py-4 sm:gap-5 sm:px-5 sm:py-7 md:min-h-[430px] md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:px-8 md:py-9 lg:px-12">
-          <div className="relative z-10 py-0 sm:py-4">
-            <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--hero-highlight)] sm:text-xs">
-              {isGermat ? "Gereedschap · installatie · solar" : "NOVA · curated essentials"}
+      {isGermat ? (
+        <section className="bg-[var(--hero)] px-[var(--page-gutter)] py-9 text-white sm:py-12 lg:py-14">
+          <div className="mx-auto max-w-[var(--content-width)]">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--hero-highlight)]">
+              GERMAT <span className="px-2 text-white/45">/</span> GEREEDSCHAP PER TOEPASSING
             </p>
-            <h1 className="germat-hero-title mt-4 max-w-[14ch] font-bold">
-              {isGermat
-                ? "Professioneel gereedschap. Direct aan de slag."
-                : "Objects for the everyday."}
+            <h1 className="germat-hero-title mt-5 max-w-[20ch] font-bold">
+              Gereedschap voor installatie, PEX en solar.
             </h1>
-            <p className="mt-3 max-w-[42ch] text-[13px] leading-5 text-white/75 sm:mt-4 sm:text-base sm:leading-7">
-              {isGermat
-                ? "Installatiegereedschap, PEX-sets en solarbenodigdheden. Vind snel wat je nodig hebt voor je klus."
-                : "Thoughtfully chosen coffee, tea and objects for a slower, warmer ritual."}
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
+            <div className="mt-5 flex flex-col gap-5 border-b border-white/20 pb-7 sm:flex-row sm:items-end sm:justify-between">
+              <p className="max-w-[52ch] text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
+                Kies je vakgebied om gericht gereedschap en beschikbare uitvoeringen te bekijken.
+              </p>
               <Link
                 href="/shop"
-                className="inline-flex min-h-12 min-w-0 items-center justify-center bg-[var(--accent)] px-6 text-center text-xs font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white hover:text-[var(--ink)]"
+                className="inline-flex min-h-11 w-fit items-center border-b border-[var(--hero-highlight)] pb-1 text-xs font-bold uppercase tracking-[0.1em] text-white transition-colors hover:text-[var(--hero-highlight)]"
               >
-                Bekijk assortiment
-              </Link>
-              <Link
-                href={secondHeroHref}
-                className="inline-flex min-h-12 min-w-0 items-center justify-center rounded-[var(--radius-button)] border border-white/55 px-4 text-center text-xs font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white hover:text-[var(--ink)] sm:px-6"
-              >
-                {isGermat ? "Populaire gereedschapsets" : "Explore objects"}
+                Bekijk alle producten <span aria-hidden="true" className="ml-3 text-base">→</span>
               </Link>
             </div>
-            <p className="mt-5 text-xs text-white/55">
-              Showcase-demo · geen echte bestelling of betaling
-            </p>
+            <nav aria-label="Kies een vakgebied" className="grid sm:grid-cols-3">
+              {[
+                ["Installatie", "/category/installatiegereedschap"],
+                ["Waterleiding & PEX", "/category/waterleiding-pex"],
+                ["Zonnepanelen", "/category/zonnepanelen-gereedschap"],
+              ].map(([label, href], index) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`flex min-h-16 items-center justify-between border-b border-white/20 py-4 text-sm font-semibold transition-colors hover:text-[var(--hero-highlight)] sm:border-b-0 sm:py-5 ${
+                    index > 0 ? "sm:border-l sm:border-white/20 sm:pl-5 lg:pl-7" : "sm:pr-5 lg:pr-7"
+                  }`}
+                >
+                  {label}
+                  <span aria-hidden="true" className="ml-3 text-lg text-[var(--hero-highlight)]">→</span>
+                </Link>
+              ))}
+            </nav>
           </div>
-          <div className="relative min-h-[180px] sm:min-h-[240px] md:min-h-[340px] lg:min-h-[380px]">
-            <Image
-              src={isGermat ? "/products/germat-pex-set.svg" : "/products/Photo_1.jpg"}
-              alt={
-                isGermat
-                  ? "Technische illustratie van een PEX-gereedschapset"
-                  : "Warm, licht interieur"
-              }
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className={isGermat ? "object-contain" : "rounded-[var(--radius-panel)] object-cover"}
-            />
-            {isGermat ? (
-              <div className="absolute bottom-3 right-3 rounded-[var(--radius-control)] border border-white/25 bg-[var(--ink)]/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.06em] sm:bottom-4 sm:right-0 sm:px-4 sm:py-3 sm:text-xs sm:tracking-[0.1em]">
-                Praktisch · professioneel · overzichtelijk
+        </section>
+      ) : (
+        <section className="relative px-4 py-4 text-white sm:px-5 lg:px-8">
+          <div className="mx-auto grid min-h-0 max-w-[var(--content-width)] items-center gap-4 overflow-hidden rounded-[var(--radius-hero)] bg-[var(--hero)] px-4 py-4 sm:gap-5 sm:px-5 sm:py-7 md:min-h-[430px] md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:px-8 md:py-9 lg:px-12">
+            <div className="relative z-10 py-0 sm:py-4">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--hero-highlight)] sm:text-xs">
+                NOVA · curated essentials
+              </p>
+              <h1 className="germat-hero-title mt-4 max-w-[14ch] font-bold">
+                Objects for the everyday.
+              </h1>
+              <p className="mt-3 max-w-[42ch] text-[13px] leading-5 text-white/75 sm:mt-4 sm:text-base sm:leading-7">
+                Thoughtfully chosen coffee, tea and objects for a slower, warmer ritual.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
+                <Link
+                  href="/shop"
+                  className="inline-flex min-h-12 min-w-0 items-center justify-center bg-[var(--accent)] px-6 text-center text-xs font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white hover:text-[var(--ink)]"
+                >
+                  Bekijk assortiment
+                </Link>
+                <Link
+                  href={secondHeroHref}
+                  className="inline-flex min-h-12 min-w-0 items-center justify-center rounded-[var(--radius-button)] border border-white/55 px-4 text-center text-xs font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white hover:text-[var(--ink)] sm:px-6"
+                >
+                  Explore objects
+                </Link>
               </div>
-            ) : null}
+            </div>
+            <div className="relative min-h-[180px] sm:min-h-[240px] md:min-h-[340px] lg:min-h-[380px]">
+              <Image
+                src="/products/Photo_1.jpg"
+                alt="Warm, light interior"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-[var(--radius-panel)] object-cover"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <TrustStrip />
 
