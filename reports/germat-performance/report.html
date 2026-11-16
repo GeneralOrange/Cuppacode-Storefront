@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Prestatiebenchmark Germat-webshop</title>
+  <style>
+    :root {
+      --paper: #f5f2eb;
+      --surface: #fffefa;
+      --ink: #252a25;
+      --muted: #656b63;
+      --line: #deddd3;
+      --green: #37624f;
+      --green-soft: #e6eee7;
+      --amber: #a45b21;
+      --amber-soft: #f7eadb;
+      --red: #9c3d32;
+      --red-soft: #f6e5e1;
+      --blue: #46667e;
+      --blue-soft: #e7eef3;
+      --radius: 14px;
+      --shadow: 0 16px 42px rgba(48, 47, 38, .06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 15px/1.6 "Segoe UI", Arial, sans-serif;
+    }
+    a { color: var(--green); text-underline-offset: .18em; }
+    a:hover { color: #234837; }
+    .page { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .masthead { padding: 48px 0 38px; }
+    .eyebrow {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 780px;
+      margin: 14px 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 6vw, 66px);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.02;
+    }
+    .lede { max-width: 760px; margin-bottom: 22px; color: var(--muted); font-size: 17px; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+      color: #4a514b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .pill.measured { border-color: #b7cbbb; background: var(--green-soft); color: #315440; }
+    .pill.provisional { border-color: #e7c89d; background: var(--amber-soft); color: #7a461d; }
+    .pill.unavailable { border-color: #c4d2dc; background: var(--blue-soft); color: #36556b; }
+    main { padding-bottom: 72px; }
+    section { margin: 0 0 22px; }
+    .panel {
+      padding: clamp(20px, 3vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 3vw, 34px);
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: 1.15;
+    }
+    h3 { margin-bottom: 8px; font-size: 16px; }
+    .caption, .small { color: var(--muted); font-size: 13px; }
+    .caption { max-width: 490px; margin: 0; text-align: right; }
+    .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .summary-card { min-height: 132px; padding: 18px; border-radius: 11px; background: #f2f0e9; }
+    .summary-card strong {
+      display: block;
+      margin: 6px 0 2px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 3vw, 38px);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+    }
+    .summary-card span { color: var(--muted); font-size: 12px; }
+    .summary-card .tag { color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .caveat {
+      margin: 18px 0 0;
+      padding: 13px 15px;
+      border-left: 3px solid var(--blue);
+      background: var(--blue-soft);
+      color: #344f62;
+      font-size: 13px;
+    }
+    .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .chart-card { padding: 18px; border: 1px solid var(--line); border-radius: 11px; }
+    .chart-card p { margin-bottom: 12px; color: var(--muted); font-size: 12px; }
+    .bar-row { display: grid; grid-template-columns: 112px 1fr 52px; align-items: center; gap: 10px; margin: 12px 0; font-size: 12px; }
+    .bar-label { overflow: hidden; color: #454b45; text-overflow: ellipsis; white-space: nowrap; }
+    .track { height: 10px; overflow: hidden; border-radius: 99px; background: #e9e7df; }
+    .bar { display: block; height: 100%; min-width: 2px; border-radius: inherit; background: var(--green); }
+    .bar.warn { background: var(--amber); }
+    .bar.bad { background: var(--red); }
+    .bar-value { color: #4e554f; font-variant-numeric: tabular-nums; text-align: right; }
+    .threshold-note { margin: 13px 0 0; color: var(--muted); font-size: 11px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+    th, td { padding: 11px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: #555d55; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: 0; }
+    td.num { white-space: nowrap; }
+    .poor { color: var(--red); font-weight: 750; }
+    .good { color: var(--green); font-weight: 750; }
+    .device { color: var(--muted); }
+    .finding-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .finding {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+    }
+    .finding p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .finding .pill { margin-bottom: 11px; }
+    .architecture {
+      display: grid;
+      grid-template-columns: 1.15fr 40px 1fr 40px 1fr;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .arch-box {
+      display: grid;
+      min-height: 83px;
+      place-content: center;
+      padding: 12px;
+      border: 1px solid #c8d4c9;
+      border-radius: 10px;
+      background: #f2f7f2;
+      text-align: center;
+    }
+    .arch-box strong { font-size: 13px; }
+    .arch-box span { color: var(--muted); font-size: 11px; }
+    .arch-arrow { color: #818a7d; font-size: 23px; text-align: center; }
+    .architecture-caption { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+    .recommendations { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
+    .recommendations li { margin: 0 0 9px; padding-left: 4px; }
+    .recommendations ul { margin: 0; padding-left: 19px; color: #4d554d; font-size: 13px; }
+    .method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 36px; }
+    .method-grid dl { display: grid; grid-template-columns: 125px 1fr; gap: 7px 12px; margin: 0; font-size: 12px; }
+    .method-grid dt { color: var(--muted); }
+    .method-grid dd { margin: 0; }
+    .source-list { display: flex; flex-wrap: wrap; gap: 14px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+    .price-lead {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      margin: 4px 0 24px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .price-lead strong {
+      display: block;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .price-lead span, .price-lead p { color: var(--muted); font-size: 13px; }
+    .price-lead p { max-width: 650px; margin: 8px 0 0; }
+    .price-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .price-columns h3 { margin-bottom: 10px; }
+    .price-columns ul, .conditions { margin: 0; padding-left: 19px; color: #4d554d; font-size: 13px; }
+    .price-columns li, .conditions li { margin-bottom: 7px; }
+    .offer-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+    .offer-table th, .offer-table td { padding: 9px 8px; }
+    .offer-table td:last-child, .offer-table th:last-child { text-align: right; white-space: nowrap; }
+    .offer-table .total td { border-top: 1px solid var(--ink); font-size: 15px; font-weight: 800; }
+    .offer-footnote { margin: 9px 0 0; color: var(--muted); font-size: 11px; }
+    .promise { margin: 22px 0 0; padding-left: 15px; border-left: 3px solid var(--green); color: #405348; font-size: 13px; }
+    footer { padding: 0 0 38px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 26px, 600px); }
+      .masthead { padding-top: 34px; }
+      .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .summary-card { min-width: 0; min-height: 118px; padding: 14px; }
+      .summary-card strong, .summary-card span { overflow-wrap: anywhere; }
+      .chart-grid, .finding-grid, .method-grid, .recommendations { grid-template-columns: 1fr; }
+      .price-lead, .price-columns, .offer-bottom { grid-template-columns: 1fr; }
+      .price-lead { align-items: start; gap: 12px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 8px; }
+      .caption { text-align: left; }
+      .architecture { grid-template-columns: 1fr; }
+      .arch-arrow { transform: rotate(90deg); line-height: 1; }
+      .method-grid dl { grid-template-columns: 112px 1fr; }
+      table { min-width: 840px; }
+      .offer-table { min-width: 0; }
+    }
+    @media print {
+      :root { --paper: #fff; --surface: #fff; --shadow: none; }
+      body { background: #fff; font-size: 11pt; }
+      .page { width: 100%; }
+      .masthead { padding: 20px 0; }
+      .panel { break-inside: avoid; box-shadow: none; }
+      section { break-inside: avoid; }
+      a { color: inherit; }
+      .table-wrap { overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page masthead">
+    <div class="eyebrow">Webshopprestaties · nulmeting</div>
+    <h1>Germat, gemeten in de browser.</h1>
+    <p class="lede">Een herhaalbare Lighthouse-labnulmeting voor vijf publieke WooCommerce-paginatypen, met daarnaast een technische broncodebeoordeling van de CuppaCode-demo.</p>
+    <div class="meta-row">
+      <span class="pill measured">Gemeten · Germat-productie</span>
+      <span class="pill provisional">Voorlopig · CuppaCode-broncode</span>
+      <span class="pill unavailable">Niet beschikbaar · CuppaCode-productie &amp; CrUX</span>
+      <span class="pill">16 november 2026 · Lighthouse 13.6.0</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="panel" aria-labelledby="summary-title">
+      <div class="section-heading">
+        <h2 id="summary-title">De kern</h2>
+        <p class="caption">Dertig voltooide labmetingen: vijf paginatypen, twee apparaatprofielen, elk drie metingen. Waarden zijn medianen.</p>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <span class="tag">Desktopstabiliteit</span>
+          <strong>0,83–0,89</strong>
+          <span>CLS-mediaan op elke onderzochte pagina; slecht volgens de grens van 0,25.</span>
+        </article>
+        <article class="summary-card">
+          <span class="tag">Traagste mobiele LCP</span>
+          <strong>8,17 s</strong>
+          <span>Productdetailpagina; controleer LCP-element en verzoekketen.</span>
+        </article>
+        <article class="summary-card">
+          <span class="tag">TTFB document winkelwagen</span>
+          <strong>2,6 s</strong>
+          <span>Mediaan op desktop en mobiel; andere pagina’s: 24–33 ms.</span>
+        </article>
+        <article class="summary-card">
+          <span class="tag">CuppaCode-productie</span>
+          <strong>Niet gemeten</strong>
+          <span>De repository beschrijft een mock/demo-webshop, geen vergelijkbare deployment.</span>
+        </article>
+      </div>
+      <p class="caveat"><strong>Belangrijk:</strong> PSI gaf HTTP 429 terug; CrUX-veldgegevens en INP zijn niet beschikbaar. Lighthouse-TBT is een labdiagnose en geen vervanging voor INP. Dit rapport kwantificeert geen prestatieverschil voor CuppaCode.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="charts-title">
+      <div class="section-heading">
+        <h2 id="charts-title">Opvallende meetresultaten</h2>
+        <p class="caption">LCP en CLS zijn medianen uit hetzelfde Lighthouse-profiel, drie metingen per pagina/apparaat.</p>
+      </div>
+      <div class="chart-grid">
+        <article class="chart-card">
+          <h3>Mobiele Largest Contentful Paint</h3>
+          <p>Seconden · lager is beter · goed ≤2,5 s, slecht &gt;4 s</p>
+          <div class="bar-row"><span class="bar-label">Startpagina</span><span class="track"><span class="bar bad" style="width:73%"></span></span><span class="bar-value">5,96 s</span></div>
+          <div class="bar-row"><span class="bar-label">Categorie</span><span class="track"><span class="bar bad" style="width:50%"></span></span><span class="bar-value">4,06 s</span></div>
+          <div class="bar-row"><span class="bar-label">Product</span><span class="track"><span class="bar bad" style="width:100%"></span></span><span class="bar-value">8,17 s</span></div>
+          <div class="bar-row"><span class="bar-label">Contact</span><span class="track"><span class="bar good" style="width:30%"></span></span><span class="bar-value">2,47 s</span></div>
+          <div class="bar-row"><span class="bar-label">Winkelwagen</span><span class="track"><span class="bar bad" style="width:55%"></span></span><span class="bar-value">4,51 s</span></div>
+          <p class="threshold-note">De balkschaal loopt tot de traagste gemeten mediaan: 8,17 seconden. Dit is een labvergelijking, geen veldprestatie.</p>
+        </article>
+        <article class="chart-card">
+          <h3>Desktopverschuiving (Cumulative Layout Shift)</h3>
+          <p>Geen eenheid · lager is beter · goed ≤0,10, slecht &gt;0,25</p>
+          <div class="bar-row"><span class="bar-label">Startpagina</span><span class="track"><span class="bar bad" style="width:100%"></span></span><span class="bar-value">0,895</span></div>
+          <div class="bar-row"><span class="bar-label">Categorie</span><span class="track"><span class="bar bad" style="width:99%"></span></span><span class="bar-value">0,882</span></div>
+          <div class="bar-row"><span class="bar-label">Product</span><span class="track"><span class="bar bad" style="width:98%"></span></span><span class="bar-value">0,881</span></div>
+          <div class="bar-row"><span class="bar-label">Contact</span><span class="track"><span class="bar bad" style="width:98%"></span></span><span class="bar-value">0,880</span></div>
+          <div class="bar-row"><span class="bar-label">Winkelwagen</span><span class="track"><span class="bar bad" style="width:93%"></span></span><span class="bar-value">0,834</span></div>
+          <p class="threshold-note">Alle vijf medianen overschrijden de grens van 0,25 voor “slecht”. Mobiele CLS is in deze metingen bijna nul; onderzoek de desktopverschuivingen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="results-title">
+      <div class="section-heading">
+        <h2 id="results-title">Resultaten per Germat-pagina</h2>
+        <p class="caption">Prestatiescore is de Lighthouse-categoriescore van 0–100. Overdracht is in decimale MB. Rood gemarkeerde waarden overschrijden de slechte LCP-grens.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Paginatype</th><th>Apparaat</th><th>Prestaties</th><th>Toegankelijkheid</th><th>Beste praktijken</th><th>SEO</th><th>LCP</th><th>CLS</th><th>TTFB</th><th>Overdracht</th><th>Verzoeken</th></tr></thead>
+          <tbody>
+            <tr><td>Startpagina</td><td class="device">Desktop</td><td class="num">75</td><td class="num">83</td><td class="num">100</td><td class="num">92</td><td class="num">0,75 s</td><td class="num poor">0,895</td><td class="num">27 ms</td><td class="num">1,02 MB</td><td class="num">70</td></tr>
+            <tr><td>Startpagina</td><td class="device">Mobiel</td><td class="num">57</td><td class="num">85</td><td class="num">96</td><td class="num">92</td><td class="num poor">5,96 s</td><td class="num">0,000</td><td class="num">31 ms</td><td class="num">1,01 MB</td><td class="num">68</td></tr>
+            <tr><td>Categorie</td><td class="device">Desktop</td><td class="num">73</td><td class="num">85</td><td class="num">100</td><td class="num">92</td><td class="num">1,20 s</td><td class="num poor">0,882</td><td class="num">28 ms</td><td class="num">0,75 MB</td><td class="num">65</td></tr>
+            <tr><td>Categorie</td><td class="device">Mobiel</td><td class="num">81</td><td class="num">86</td><td class="num">100</td><td class="num">92</td><td class="num poor">4,06 s</td><td class="num">0,001</td><td class="num">29 ms</td><td class="num">0,75 MB</td><td class="num">62</td></tr>
+            <tr><td>Productdetail</td><td class="device">Desktop</td><td class="num">68</td><td class="num">88</td><td class="num">77</td><td class="num">100</td><td class="num">1,76 s</td><td class="num poor">0,881</td><td class="num">24 ms</td><td class="num">1,37 MB</td><td class="num">87</td></tr>
+            <tr><td>Productdetail</td><td class="device">Mobiel</td><td class="num">66</td><td class="num">88</td><td class="num">77</td><td class="num">100</td><td class="num poor">8,17 s</td><td class="num">0,000</td><td class="num">33 ms</td><td class="num">1,33 MB</td><td class="num">86</td></tr>
+            <tr><td>Contact/content</td><td class="device">Desktop</td><td class="num">75</td><td class="num">89</td><td class="num">100</td><td class="num">92</td><td class="num">0,66 s</td><td class="num poor">0,880</td><td class="num">24 ms</td><td class="num">0,76 MB</td><td class="num">65</td></tr>
+            <tr><td>Contact/content</td><td class="device">Mobiel</td><td class="num">94</td><td class="num">89</td><td class="num">100</td><td class="num">92</td><td class="num">2,47 s</td><td class="num">0,000</td><td class="num">29 ms</td><td class="num">0,76 MB</td><td class="num">64</td></tr>
+            <tr><td>Winkelwagen</td><td class="device">Desktop</td><td class="num">67</td><td class="num">88</td><td class="num">73</td><td class="num">61</td><td class="num">1,26 s</td><td class="num poor">0,834</td><td class="num poor">2.582 ms</td><td class="num">2,45 MB</td><td class="num">146</td></tr>
+            <tr><td>Winkelwagen</td><td class="device">Mobiel</td><td class="num">66</td><td class="num">88</td><td class="num">73</td><td class="num">61</td><td class="num poor">4,51 s</td><td class="num">0,000</td><td class="num poor">2.663 ms</td><td class="num">2,29 MB</td><td class="num">145</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin:14px 0 0">Exacte medianen en details per meting staan in <a href="./comparison-data.json">comparison-data.json</a> en <a href="./raw-results.json">raw-results.json</a>.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="cart-title">
+      <div class="section-heading">
+        <h2 id="cart-title">De winkelwagen vraagt apart onderzoek</h2>
+        <span class="pill measured">Gemeten · geen oorzaakanalyse</span>
+      </div>
+      <div class="finding-grid">
+        <article class="finding">
+          <span class="pill provisional">Documentrespons</span>
+          <h3>Trage hoofdrespons</h3>
+          <p>TTFB 2,58 s desktop en 2,66 s mobiel, tegenover 24–33 ms bij andere paginatypen. Stel vast welke origin-, cache- of verzoeklaag de tijd verklaart.</p>
+        </article>
+        <article class="finding">
+          <span class="pill provisional">Netwerkoverdracht</span>
+          <h3>Grootste paginacapture</h3>
+          <p>2,45 MB / 146 verzoeken desktop en 2,29 MB / 145 verzoeken mobiel; in beide profielen is circa 1,35 MB JavaScript-overdracht.</p>
+        </article>
+        <article class="finding">
+          <span class="pill unavailable">Oorzaak niet vastgesteld</span>
+          <h3>Externe partijen zijn aanwezig</h3>
+          <p>Winkelwagen-captures bevatten circa 0,47–0,48 MB van Google Tag Manager en 0,30 MB van Stripe. Dat bewijst niet dat zij de documentvertraging veroorzaakten.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <h2 id="architecture-title">CuppaCode: architectuur, geen benchmark</h2>
+        <span class="pill provisional">Voorlopig · broncodebeoordeling</span>
+      </div>
+      <p>Het Germat-thema in de repository gebruikt lokale mockdata voor commerce. De demowinkelwagen is lokaal en de checkout maakt geen bestelling aan en verwerkt geen betaling. Een productievergelijking is daarom niet beschikbaar.</p>
+      <div class="architecture" role="img" aria-label="De Next.js-routehandlers van CuppaCode gebruiken commerce- en contentproviderinterfaces die verbinding maken met mockdata of geconfigureerde WooCommerce- en WordPress-integraties.">
+        <div class="arch-box"><strong>Next.js-interface &amp; routehandlers</strong><span>Commerceroutes worden dynamisch gerenderd</span></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-box"><strong>CommerceProvider</strong><span>Germat-demo gebruikt standaard lokale mockdata</span></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-box"><strong>Mockdata</strong><span>WooCommerce is apart configureerbaar</span></div>
+      </div>
+      <div class="architecture">
+        <div class="arch-box"><strong>CMS-pagina’s</strong><span>Onafhankelijke contentprovider</span></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-box"><strong>Mock-CMS / WordPress REST</strong><span>WordPress-pagina’s: revalidatie na 1 uur</span></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-box"><strong>Gerenderde content</strong><span>Niet opgenomen in deze prestatiemeting</span></div>
+      </div>
+      <p class="architecture-caption">De code bevat ook een client-side winkelwagenprovider op rootniveau, een clientgrens voor catalogusinteracties, Next.js-afbeeldingsconfiguratie en next/font voor Manrope. De productiekosten en het deploymentgedrag zijn niet gemeten. Zie de <a href="../../README.md">architectuur- en demo-veiligheidsnotities</a> van het project.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="actions-title">
+      <div class="section-heading">
+        <h2 id="actions-title">Aanbevolen volgorde van aanpak</h2>
+        <p class="caption">Kwalitatieve prioriteiten; geen ongefundeerde schattingen van winst.</p>
+      </div>
+      <div class="recommendations">
+        <div>
+          <h3>Eerst: bevestig de oorzaken</h3>
+          <ul>
+            <li>Trace desktop-layoutverschuivingen op alle vijf templates; controleer afbeeldingswrappers, lazy loading, fonts en laat geladen content.</li>
+            <li>Meet de document- en API-tijden van de winkelwagen aan browser-, CDN- en originzijde.</li>
+            <li>Leg het mobiele LCP-element en de volledige resourceketen vast op product-, home-, categorie- en winkelwagenpagina’s.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Daarna: wijzig en controleer</h3>
+          <ul>
+            <li>Reserveer ruimte voor bevestigde verschuivingen en test responsive layouts opnieuw.</li>
+            <li>Beoordeel caching, scripts en externe partijen op de winkelwagen zonder personalisatie of betaalgedrag aan te tasten.</li>
+            <li>Benchmark CuppaCode pas na een representatieve productie-deployment en geverifieerde data-/providerconfiguratie.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small" style="margin:20px 0 0">Volledige onderzoeksstappen en acceptatiebewijs: <a href="./recommendations.md">recommendations.md</a>.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="offer-title">
+      <div class="section-heading">
+        <h2 id="offer-title">CuppaCode × Germat</h2>
+        <span class="pill provisional">Investering &amp; dienstverlening</span>
+      </div>
+      <div class="price-lead">
+        <div>
+          <strong>€ 3.250</strong>
+          <span>Eenmalige implementatie · exclusief btw</span>
+        </div>
+        <div>
+          <p>Een nieuwe storefront voor de bestaande Germat-webshop. De WooCommerce-omgeving blijft behouden voor productbeheer, voorraad en bestellingen.</p>
+          <span>Prijsopgave · geen gemeten resultaat of prestatieclaim</span>
+        </div>
+      </div>
+      <div class="price-columns">
+        <div>
+          <h3>Eenmalig inbegrepen</h3>
+          <ul>
+            <li>Ontwerp en realisatie van de Germat-storefront.</li>
+            <li>Responsive weergave voor desktop, tablet en mobiel.</li>
+            <li>Integratie met de bestaande WooCommerce-omgeving.</li>
+            <li>Producten, categorieën en productvarianten.</li>
+            <li>Winkelwagen en het afgesproken bestelproces.</li>
+            <li>Integratie van WordPress-pagina’s.</li>
+            <li>Technische optimalisatie en kwaliteitscontrole.</li>
+            <li>Configuratie en livegang op Vercel.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Maandelijkse dienstverlening · € 149 excl. btw</h3>
+          <ul>
+            <li>Hosting en deployment via Vercel, inclusief SSL-certificaat en CDN.</li>
+            <li>Uptime- en technische monitoring.</li>
+            <li>Kleine technische updates, correcties en onderhoud van de storefront.</li>
+            <li>Ondersteuning bij technische problemen.</li>
+            <li>Tot 30 minuten kleine aanpassingen per maand.</li>
+          </ul>
+          <p class="offer-footnote">Grotere wijzigingen, nieuwe functionaliteiten en uitbreidingen worden vooraf besproken en apart geoffreerd.</p>
+        </div>
+      </div>
+      <div class="offer-bottom">
+        <div>
+          <h3>Contractvoorwaarden</h3>
+          <ul class="conditions">
+            <li>Initiële looptijd: 3 maanden; daarna maandelijks opzegbaar.</li>
+            <li>Opzegtermijn: 2 kalendermaanden.</li>
+            <li>Implementatiekosten: 50% bij opdracht en 50% bij oplevering (€ 1.625 per termijn, exclusief btw).</li>
+            <li>Maandelijkse dienstverlening wordt vooraf gefactureerd.</li>
+            <li>Eventueel extra infrastructuurverbruik wordt vooraf besproken.</li>
+            <li>Bestaande WooCommerce-hosting, domeinregistratie en externe licenties vallen buiten deze offerte.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Financieel overzicht · exclusief btw</h3>
+          <table class="offer-table">
+            <tbody>
+              <tr><td>Eenmalige implementatie</td><td>€ 3.250</td></tr>
+              <tr><td>Maandelijkse dienstverlening</td><td>€ 149</td></tr>
+              <tr><td>Jaarlijkse dienstverlening (12 × € 149)</td><td>€ 1.788</td></tr>
+              <tr class="total"><td>Totale investering eerste jaar</td><td>€ 5.038</td></tr>
+            </tbody>
+          </table>
+          <p class="offer-footnote">Eerstejaarsbedrag is implementatie plus twaalf maanden dienstverlening. Btw en uitgesloten kosten zijn niet inbegrepen.</p>
+        </div>
+      </div>
+      <p class="promise"><strong>Wat dit Germat oplevert:</strong> een vernieuwde webshopervaring zonder vervanging van de bestaande WooCommerce-backend, behoud van de vertrouwde WordPress-beheeromgeving, een flexibele frontend voor verdere ontwikkeling, een architectuur voorbereid op uitbreidingen en technisch beheer met ondersteuning door CuppaCode.<br><br><em>CuppaCode – Modern storefronts, without replacing what already works.</em></p>
+    </section>
+
+    <section class="panel" aria-labelledby="method-title">
+      <div class="section-heading">
+        <h2 id="method-title">Deze nulmeting lezen</h2>
+        <p class="caption">Labresultaten beschrijven deze testopstelling; veldresultaten en oorzaken vragen apart bewijs.</p>
+      </div>
+      <div class="method-grid">
+        <div>
+          <h3>Testprofielen</h3>
+          <dl>
+            <dt>Desktop</dt><dd>1350 × 940; 40 ms RTT; 10,240 Kbps; 1× CPU</dd>
+            <dt>Mobiel</dt><dd>360 × 800; DPR 2; 150 ms RTT; 1.638,4 Kbps; 4× CPU</dd>
+            <dt>Metingen</dt><dd>Drie geldige Lighthouse-metingen per route en profiel; mediaan gerapporteerd</dd>
+            <dt>Venster</dt><dd>16 nov 2026, 20:26:29–20:38:25 UTC</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Beperkingen</h3>
+          <dl>
+            <dt>Veldgegevens</dt><dd>PSI HTTP 429; geen CrUX of INP</dd>
+            <dt>Cache</dt><dd>Browseropslag/cache gewist; origin-/CDN-cache niet beheerst</dd>
+            <dt>Locatie</dt><dd>Locatie van de testrunner niet beheerst</dd>
+            <dt>CuppaCode</dt><dd>Geen vergelijkbare publieke productie-deployment; geen benchmarkclaim</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="files-title">
+      <div class="section-heading">
+        <h2 id="files-title">Rapportbestanden</h2>
+        <p class="caption">De ruwe waarnemingen en praktische vervolgstappen horen bij deze presentatie.</p>
+      </div>
+      <ul class="source-list">
+        <li><a href="./report.md">Geschreven rapport</a></li>
+        <li><a href="./recommendations.md">Aanbevelingen</a></li>
+        <li><a href="./comparison-data.json">Vergelijkingsgegevens</a></li>
+        <li><a href="./raw-results.json">Ruwe Lighthouse-resultaten</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="page">Labbenchmark publieke Germat-website · geen wijzigingen aan de productieomgeving · metingen zijn een nulmeting, geen oorzaakanalyse.</footer>
+</body>
+</html>

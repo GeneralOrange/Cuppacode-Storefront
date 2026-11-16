@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "reportVersion": "1.0",
+  "measurementDate": "2026-11-16",
+  "measurementWindowUtc": {
+    "start": "2026-11-16T20:26:29.954Z",
+    "end": "2026-11-16T20:38:25.466Z"
+  },
+  "scoreScale": "Lighthouse category scores normalized to 0-100; performance score is not a conversion or business outcome.",
+  "medianRuns": 3,
+  "fieldData": {
+    "status": "not-available",
+    "reason": "The PageSpeed Insights API returned HTTP 429; no URL-level or origin-level CrUX field data was retrieved. INP is therefore not reported."
+  },
+  "sites": {
+    "germat": {
+      "status": "measured",
+      "environment": "public production WooCommerce website",
+      "url": "https://germat.nl/"
+    },
+    "cuppacode": {
+      "status": "not-measured",
+      "environment": "source-only local demo; not production-equivalent",
+      "reason": "No comparable public deployment was available. Performance improvements must not be quantified until a production-like deployment is tested."
+    }
+  },
+  "pageTypes": [
+    {
+      "key": "home",
+      "label": "Homepage",
+      "germat": {
+        "environment": "production",
+        "url": "https://germat.nl/",
+        "measurementStatus": "measured",
+        "devices": {
+          "desktop": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 75,
+                "accessibility": 83,
+                "bestPractices": 100,
+                "seo": 92
+              },
+              "metrics": {
+                "lcpMs": 754.3910000000002,
+                "fcpMs": 754.3910000000002,
+                "speedIndexMs": 984.6910054222467,
+                "tbtMs": 31,
+                "cls": 0.8949589519197108,
+                "ttfbMs": 27,
+                "mainThreadMs": 1275.3109999999465,
+                "domElements": 4858
+              },
+              "resources": {
+                "total": {
+                  "requests": 70,
+                  "transferBytes": 1018176
+                },
+                "document": {
+                  "requests": 1,
+                  "transferBytes": 182481
+                },
+                "script": {
+                  "requests": 46,
+                  "transferBytes": 366601
+                },
+                "stylesheet": {
+                  "requests": 11,
+                  "transferBytes": 147187
+                },
+                "image": {
+                  "requests": 2,
+                  "transferBytes": 23574
+                },
+                "font": {
+                  "requests": 7,
+                  "transferBytes": 295824
+                },
+                "third-party": {
+                  "requests": 5,
+                  "transferBytes": 84498
+                },
+                "other": {
+                  "requests": 3,
+                  "transferBytes": 2509
+                }
+              }
+            }
+          },
+          "mobile": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 56.99999999999999,
+                "accessibility": 85,
+                "bestPractices": 96,
+                "seo": 92
+              },
+              "metrics": {
+                "lcpMs": 5961.061499999999,
+                "fcpMs": 3260.7859999999996,
+                "speedIndexMs": 3299.3644999999997,
+                "tbtMs": 553,
+                "cls": 0,
+                "ttfbMs": 31,
+                "mainThreadMs": 3936.03999999989,
+                "domElements": 4830
+              },
+              "resources": {
+                "total": {
+                  "requests": 68,
+                  "transferBytes": 1006157
+                },
+                "document": {
+                  "requests": 1,
+                  "transferBytes": 181928
+                },
+                "script": {
+                  "requests": 45,
+                  "transferBytes": 366037
+                },
+                "stylesheet": {
+                  "requests": 11,
+                  "transferBytes": 147187
+                },
+                "image": {
+                  "requests": 2,
+                  "transferBytes": 27615
+                },
+                "font": {
+                  "requests": 6,
+                  "transferBytes": 280881
+                },
+                "third-party": {
+                  "requests": 4,
+                  "transferBytes": 69555
+                },
+                "other": {
+                  "requests": 3,
+                  "transferBytes": 2509
+                }
+              }
+            }
+          }
+        }
+      },
+      "cuppacode": {
+        "environment": "not deployed to a comparable production URL",
+        "route": "/",
+        "measurementStatus": "not measured",
+        "devices": null,
+        "reason": "The repository contains a Germat mock/demo storefront; no equivalent public production or staging endpoint was available. Localhost is not treated as production-equivalent."
+      }
+    },
+    {
+      "key": "category",
+      "label": "Category page",
+      "germat": {
+        "environment": "production",
+        "url": "https://germat.nl/product-categorie/gereedschap/complete-gereedschap-sets/installatie-gereedschap-complete-gereedschap-sets/",
+        "measurementStatus": "measured",
+        "devices": {
+          "desktop": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 73,
+                "accessibility": 85,
+                "bestPractices": 100,
+                "seo": 92
+              },
+              "metrics": {
+                "lcpMs": 1200.7344999999998,
+                "fcpMs": 681.1969999999999,
+                "speedIndexMs": 708.2769535622845,
+                "tbtMs": 0,
+                "cls": 0.8816244110353333,
+                "ttfbMs": 28,
+                "mainThreadMs": 578.8030000000011,
+                "domElements": 2888
+              },
+              "resources": {
+                "total": {
+                  "requests": 65,
+                  "transferBytes": 748207
+                },
+                "document": {
+                  "requests": 1,
+                  "transferBytes": 91017
+                },
+                "script": {
+                  "requests": 43,
+                  "transferBytes": 317900
+                },
+                "stylesheet": {
+                  "requests": 11,
+                  "transferBytes": 144723
+                },
+                "image": {
+                  "requests": 5,
+                  "transferBytes": 19137
+                },
+                "font": {
+                  "requests": 3,
+                  "transferBytes": 173399
+                },
+                "third-party": {
+                  "requests": 3,
+                  "transferBytes": 54000
+                },
+                "other": {
+                  "requests": 2,
+                  "transferBytes": 2031
+                }
+              }
+            }
+          },
+          "mobile": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 81,
+                "accessibility": 86,
+                "bestPractices": 100,
+                "seo": 92
+              },
+              "metrics": {
+                "lcpMs": 4063.3300000000004,
+                "fcpMs": 2604.149,
+                "speedIndexMs": 2663.819,
+                "tbtMs": 49,
+                "cls": 0.0007220182291666666,
+                "ttfbMs": 29,
+                "mainThreadMs": 2415.6200000000044,
+                "domElements": 2865
+              },
+              "resources": {
+                "total": {
+                  "requests": 62,
+                  "transferBytes": 752192
+                },
+                "document": {
+                  "requests": 1,
+                  "transferBytes": 90510
+                },
+                "script": {
+                  "requests": 42,
+                  "transferBytes": 317337
+                },
+                "stylesheet": {
+                  "requests": 11,
+                  "transferBytes": 144723
+                },
+                "image": {
+                  "requests": 3,
+                  "transferBytes": 24192
+                },
+                "font": {
+                  "requests": 3,
+                  "transferBytes": 173399
+                },
+                "third-party": {
+                  "requests": 3,
+                  "transferBytes": 54001
+                },
+                "other": {
+                  "requests": 2,
+                  "transferBytes": 2031
+                }
+              }
+            }
+          }
+        }
+      },
+      "cuppacode": {
+        "environment": "not deployed to a comparable production URL",
+        "route": "/category/gereedschapsets",
+        "measurementStatus": "not measured",
+        "devices": null,
+        "reason": "The repository contains a Germat mock/demo storefront; no equivalent public production or staging endpoint was available. Localhost is not treated as production-equivalent."
+      }
+    },
+    {
+      "key": "product",
+      "label": "Product detail",
+      "germat": {
+        "environment": "production",
+        "url": "https://germat.nl/product/germat-complete-waterleiding-pex-gereedschapset-met-inwendige-buigveren/",
+        "measurementStatus": "measured",
+        "devices": {
+          "desktop": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 68,
+                "accessibility": 88,
+                "bestPractices": 77,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 1755.5985000000003,
+                "fcpMs": 686.2935,
+                "speedIndexMs": 1026.545302318461,
+                "tbtMs": 7,
+                "cls": 0.8814659956192699,
+                "ttfbMs": 24,
+                "mainThreadMs": 792.4750000000006,
+                "domElements": 2944
+              },
+              "resources": {
+                "total": {
+                  "requests": 87,
+                  "transferBytes": 1366894
+                },
+                "document": {
+                  "requests": 3,
+                  "transferBytes": 99314
+                },
+                "script": {
+                  "requests": 48,
+                  "transferBytes": 635067
+                },
+                "stylesheet": {
+                  "requests": 14,
+                  "transferBytes": 162967
+                },
+                "image": {
+                  "requests": 16,
+                  "transferBytes": 293907
+                },
+                "font": {
+                  "requests": 3,
+                  "transferBytes": 173399
+                },
+                "third-party": {
+                  "requests": 9,
+                  "transferBytes": 366333
+                },
+                "other": {
+                  "requests": 3,
+                  "transferBytes": 2611
+                }
+              }
+            }
+          },
+          "mobile": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 66,
+                "accessibility": 88,
+                "bestPractices": 77,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 8173.100999999995,
+                "fcpMs": 2806.7370000000005,
+                "speedIndexMs": 3276.664554024338,
+                "tbtMs": 230,
+                "cls": 0.0001006423611111111,
+                "ttfbMs": 33,
+                "mainThreadMs": 3093.7760000000003,
+                "domElements": 2921
+              },
+              "resources": {
+                "total": {
+                  "requests": 86,
+                  "transferBytes": 1325973
+                },
+                "document": {
+                  "requests": 3,
+                  "transferBytes": 98986
+                },
+                "script": {
+                  "requests": 47,
+                  "transferBytes": 637254
+                },
+                "stylesheet": {
+                  "requests": 14,
+                  "transferBytes": 162967
+                },
+                "image": {
+                  "requests": 16,
+                  "transferBytes": 272967
+                },
+                "font": {
+                  "requests": 3,
+                  "transferBytes": 173399
+                },
+                "third-party": {
+                  "requests": 9,
+                  "transferBytes": 369599
+                },
+                "other": {
+                  "requests": 3,
+                  "transferBytes": 2611
+                }
+              }
+            }
+          }
+        }
+      },
+      "cuppacode": {
+        "environment": "not deployed to a comparable production URL",
+        "route": "/product/germat-complete-waterleiding-pex-gereedschapset-in-en-uitwendige-buigveren",
+        "measurementStatus": "not measured",
+        "devices": null,
+        "reason": "The repository contains a Germat mock/demo storefront; no equivalent public production or staging endpoint was available. Localhost is not treated as production-equivalent."
+      }
+    },
+    {
+      "key": "content",
+      "label": "CMS/content page",
+      "germat": {
+        "environment": "production",
+        "url": "https://germat.nl/contact/",
+        "measurementStatus": "measured",
+        "devices": {
+          "desktop": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 75,
+                "accessibility": 89,
+                "bestPractices": 100,
+                "seo": 92
+              },
+              "metrics": {
+                "lcpMs": 656.4929999999999,
+                "fcpMs": 656.4929999999999,
+                "speedIndexMs": 683.3355876445459,
+                "tbtMs": 9,
+                "cls": 0.8799081025600619,
+                "ttfbMs": 24,
+                "mainThreadMs": 730.5769999999986,
+                "domElements": 2979
+              },
+              "resources": {
+                "total": {
+                  "requests": 65,
+                  "transferBytes": 759045
+                },
+                "document": {
+                  "requests": 1,
+                  "transferBytes": 93215
+                },
+                "script": {
+                  "requests": 46,
+                  "transferBytes": 344807
+                },
+                "stylesheet": {
+                  "requests": 11,
+                  "transferBytes": 137605
+                },
+                "image": {
+                  "requests": 2,
+                  "transferBytes": 7988
+                },
+                "font": {
+                  "requests": 3,
+                  "transferBytes": 173399
+                },
+                "third-party": {
+                  "requests": 3,
+                  "transferBytes": 53999
+                },
+                "other": {
+                  "requests": 2,
+                  "transferBytes": 2031
+                }
+              }
+            }
+          },
+          "mobile": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 94,
+                "accessibility": 89,
+                "bestPractices": 100,
+                "seo": 92
+              },
+              "metrics": {
+                "lcpMs": 2471.0730000000003,
+                "fcpMs": 2471.0730000000003,
+                "speedIndexMs": 2471.0730000000003,
+                "tbtMs": 78.18499999999995,
+                "cls": 0.0001006423611111111,
+                "ttfbMs": 29,
+                "mainThreadMs": 2232.0679999999948,
+                "domElements": 2956
+              },
+              "resources": {
+                "total": {
+                  "requests": 64,
+                  "transferBytes": 763746
+                },
+                "document": {
+                  "requests": 1,
+                  "transferBytes": 92717
+                },
+                "script": {
+                  "requests": 45,
+                  "transferBytes": 344244
+                },
+                "stylesheet": {
+                  "requests": 11,
+                  "transferBytes": 137605
+                },
+                "image": {
+                  "requests": 2,
+                  "transferBytes": 13750
+                },
+                "font": {
+                  "requests": 3,
+                  "transferBytes": 173399
+                },
+                "third-party": {
+                  "requests": 3,
+                  "transferBytes": 54000
+                },
+                "other": {
+                  "requests": 2,
+                  "transferBytes": 2031
+                }
+              }
+            }
+          }
+        }
+      },
+      "cuppacode": {
+        "environment": "not deployed to a comparable production URL",
+        "route": "/contact",
+        "measurementStatus": "not measured",
+        "devices": null,
+        "reason": "The repository contains a Germat mock/demo storefront; no equivalent public production or staging endpoint was available. Localhost is not treated as production-equivalent."
+      }
+    },
+    {
+      "key": "cart",
+      "label": "Cart page",
+      "germat": {
+        "environment": "production",
+        "url": "https://germat.nl/winkelwagen/",
+        "measurementStatus": "measured",
+        "devices": {
+          "desktop": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 67,
+                "accessibility": 88,
+                "bestPractices": 73,
+                "seo": 61
+              },
+              "metrics": {
+                "lcpMs": 1256.6374999999998,
+                "fcpMs": 738.0975,
+                "speedIndexMs": 2585.7257620802516,
+                "tbtMs": 5,
+                "cls": 0.8343397850463635,
+                "ttfbMs": 2582,
+                "mainThreadMs": 908.5879999999875,
+                "domElements": 2635
+              },
+              "resources": {
+                "total": {
+                  "requests": 146,
+                  "transferBytes": 2445172
+                },
+                "document": {
+                  "requests": 3,
+                  "transferBytes": 95861
+                },
+                "script": {
+                  "requests": 82,
+                  "transferBytes": 1349357
+                },
+                "stylesheet": {
+                  "requests": 44,
+                  "transferBytes": 166515
+                },
+                "image": {
+                  "requests": 5,
+                  "transferBytes": 633171
+                },
+                "font": {
+                  "requests": 5,
+                  "transferBytes": 195623
+                },
+                "third-party": {
+                  "requests": 16,
+                  "transferBytes": 856934
+                },
+                "other": {
+                  "requests": 7,
+                  "transferBytes": 4496
+                }
+              }
+            }
+          },
+          "mobile": {
+            "runsCompleted": 3,
+            "median": {
+              "scores": {
+                "performance": 66,
+                "accessibility": 88,
+                "bestPractices": 73,
+                "seo": 61
+              },
+              "metrics": {
+                "lcpMs": 4506.488,
+                "fcpMs": 2670.1980000000003,
+                "speedIndexMs": 7883.644561810315,
+                "tbtMs": 270.9999999999991,
+                "cls": 0,
+                "ttfbMs": 2663,
+                "mainThreadMs": 3198.3839999999755,
+                "domElements": 2612
+              },
+              "resources": {
+                "total": {
+                  "requests": 145,
+                  "transferBytes": 2289447
+                },
+                "document": {
+                  "requests": 3,
+                  "transferBytes": 95223
+                },
+                "script": {
+                  "requests": 81,
+                  "transferBytes": 1358559
+                },
+                "stylesheet": {
+                  "requests": 44,
+                  "transferBytes": 166515
+                },
+                "image": {
+                  "requests": 5,
+                  "transferBytes": 468220
+                },
+                "font": {
+                  "requests": 5,
+                  "transferBytes": 195623
+                },
+                "third-party": {
+                  "requests": 16,
+                  "transferBytes": 867230
+                },
+                "other": {
+                  "requests": 7,
+                  "transferBytes": 4505
+                }
+              }
+            }
+          }
+        }
+      },
+      "cuppacode": {
+        "environment": "not deployed to a comparable production URL",
+        "route": "/cart",
+        "measurementStatus": "not measured",
+        "devices": null,
+        "reason": "The repository contains a Germat mock/demo storefront; no equivalent public production or staging endpoint was available. Localhost is not treated as production-equivalent."
+      }
+    }
+  ]
+}
